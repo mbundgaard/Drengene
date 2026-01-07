@@ -443,6 +443,7 @@ function renderTopicTrends() {
 
 // Mood/Sentiment Page
 function renderMood() {
+    const summaryContainer = document.getElementById('mood-summary');
     const personsContainer = document.getElementById('mood-persons');
     const timelineContainer = document.getElementById('mood-timeline');
     const weekdaysContainer = document.getElementById('mood-weekdays');
@@ -453,6 +454,39 @@ function renderMood() {
         timelineContainer.innerHTML = '';
         weekdaysContainer.innerHTML = '';
         return;
+    }
+
+    // Summary stats
+    if (SENTIMENT.byPerson) {
+        const sorted = Object.entries(SENTIMENT.byPerson)
+            .sort((a, b) => b[1].score - a[1].score);
+
+        const mostPositive = sorted[0];
+        const mostNegative = sorted[sorted.length - 1];
+        const balanced = sorted.find(([_, d]) => Math.abs(d.score) < 2) || sorted[Math.floor(sorted.length / 2)];
+
+        summaryContainer.innerHTML = `
+            <div class="mood-highlights">
+                <div class="mood-highlight sunshine">
+                    <div class="mood-highlight-icon">☀️</div>
+                    <div class="mood-highlight-label">Solstrålen</div>
+                    <div class="mood-highlight-name" style="color: ${mostPositive[1].color}">${mostPositive[0]}</div>
+                    <div class="mood-highlight-score">+${mostPositive[1].score}%</div>
+                </div>
+                <div class="mood-highlight balanced">
+                    <div class="mood-highlight-icon">⚖️</div>
+                    <div class="mood-highlight-label">Balanceret</div>
+                    <div class="mood-highlight-name" style="color: ${balanced[1].color}">${balanced[0]}</div>
+                    <div class="mood-highlight-score">${balanced[1].score > 0 ? '+' : ''}${balanced[1].score}%</div>
+                </div>
+                <div class="mood-highlight realist">
+                    <div class="mood-highlight-icon">🌧️</div>
+                    <div class="mood-highlight-label">Realisten</div>
+                    <div class="mood-highlight-name" style="color: ${mostNegative[1].color}">${mostNegative[0]}</div>
+                    <div class="mood-highlight-score">${mostNegative[1].score}%</div>
+                </div>
+            </div>
+        `;
     }
 
     // Persons - sorted by positivity score
