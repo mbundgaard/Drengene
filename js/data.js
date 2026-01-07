@@ -39,6 +39,9 @@ const DATA = {
       "swears": 2723,
       "laughs": 1214,
       "media": 6906,
+      "gifs": 676,
+      "images": 5972,
+      "videos": 220,
       "topEmojis": [
         "🏻",
         "😂",
@@ -58,6 +61,9 @@ const DATA = {
       "swears": 953,
       "laughs": 1641,
       "media": 2295,
+      "gifs": 294,
+      "images": 1918,
+      "videos": 68,
       "topEmojis": [
         "😂",
         "😀",
@@ -77,6 +83,9 @@ const DATA = {
       "swears": 767,
       "laughs": 1748,
       "media": 2123,
+      "gifs": 193,
+      "images": 1861,
+      "videos": 59,
       "topEmojis": [
         "😃",
         "😂",
@@ -96,6 +105,9 @@ const DATA = {
       "swears": 625,
       "laughs": 124,
       "media": 2580,
+      "gifs": 240,
+      "images": 2208,
+      "videos": 122,
       "topEmojis": [
         "😄",
         "😃",
@@ -115,6 +127,9 @@ const DATA = {
       "swears": 401,
       "laughs": 437,
       "media": 1762,
+      "gifs": 193,
+      "images": 1504,
+      "videos": 48,
       "topEmojis": [
         "😀",
         "👏",
@@ -134,6 +149,9 @@ const DATA = {
       "swears": 514,
       "laughs": 152,
       "media": 1164,
+      "gifs": 72,
+      "images": 1057,
+      "videos": 35,
       "topEmojis": [
         "👌",
         "😂",
@@ -153,6 +171,9 @@ const DATA = {
       "swears": 391,
       "laughs": 1433,
       "media": 1423,
+      "gifs": 83,
+      "images": 1299,
+      "videos": 36,
       "topEmojis": [
         "👍",
         "😂",
@@ -172,6 +193,9 @@ const DATA = {
       "swears": 401,
       "laughs": 901,
       "media": 1127,
+      "gifs": 109,
+      "images": 958,
+      "videos": 53,
       "topEmojis": [
         "😄",
         "👍",
@@ -191,6 +215,9 @@ const DATA = {
       "swears": 210,
       "laughs": 152,
       "media": 793,
+      "gifs": 84,
+      "images": 682,
+      "videos": 24,
       "topEmojis": [
         "😂",
         "🇩",
@@ -210,6 +237,9 @@ const DATA = {
       "swears": 228,
       "laughs": 532,
       "media": 743,
+      "gifs": 59,
+      "images": 656,
+      "videos": 25,
       "topEmojis": [
         "🤣",
         "😉",
@@ -3847,6 +3877,685 @@ const DATA = {
       "date": "22/07/2025"
     }
   ],
+  "stakkelsFar": {
+    "mentions": [
+      {
+        "sender": "Holst",
+        "text": "Ja, men det er nemt og det vigtigste er alligevel sovsen. Det mener ungerne",
+        "date": "31/10/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Døring",
+        "text": "Der var en del ros fra de beskyttende mødre, der var med ude holde deres børn i hånden 🍑",
+        "date": "31/10/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Lys",
+        "text": "Børnene her i kvarteret elsker det. Det er en stor aften\n‎[31.10.2025, 20.38.30] Lys: ‎video udeladt",
+        "date": "31/10/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Fyn",
+        "text": "hygger med ungerne.. næste weekend skal den have en over nakken👌",
+        "date": "01/11/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Comput",
+        "text": "Første skud i dynen, det er børnelærdom",
+        "date": "01/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Døring",
+        "text": "Så de unge kan være forgældede i endnu længere tid 😆",
+        "date": "05/11/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "Jeg vidste ikke vi skulle spille poker.\nSå vi fik fremtryllet et jeton sæt uden denominationer og uden kort.\nVi måtte så i kiosken og købe papir kort.",
+        "date": "08/11/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Fyn",
+        "text": "Ahhh okay.. gamle mænd vågner tidligt",
+        "date": "09/11/2025",
+        "pattern": "vågner"
+      },
+      {
+        "sender": "Comput",
+        "text": "Tjek, unge sygeplejerske studerende…",
+        "date": "09/11/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "En håndfuld bajasere og en monster oplevelse.\nJeg skal sikkert få børn i skole næste dag.",
+        "date": "15/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Fyn",
+        "text": "barn er styrtet på cykel.. strømafbrydelse.. det kører",
+        "date": "17/11/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Comput",
+        "text": "ej ok, nu dør baby fandeme",
+        "date": "17/11/2025",
+        "pattern": "baby"
+      },
+      {
+        "sender": "Comput",
+        "text": "Du har da selv børn i skole, har de ikke købt lommeregner? - jeg måtte da købe en texas ti-30-something til Vera",
+        "date": "17/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Selvom jeg tit beklager mig og er stakkels far, så har jeg ikke som sådan et behov for at skifte mit liv nu, ud med et på gaden.\n‎[23.11.2025, 10.43.4",
+        "date": "23/11/2025",
+        "pattern": "stakkels far"
+      },
+      {
+        "sender": "Rob",
+        "text": "Nå nå.\nBlev lige helt urolig.\nFra børn og fulde sjæle du ved….\n\nDet havde været noget værre vrøvl så. ‎<Denne besked er blevet redigeret>",
+        "date": "24/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Lys",
+        "text": "Vi har netop fået de her, og de fungerer fint indtil videre Bygaard Hexa pandesæt, 20 og 28 cm",
+        "date": "25/11/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "Nå nu tvinger Maria mig til at være nærværende og fixe juleønsker for børn.",
+        "date": "25/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Wiz",
+        "text": "Der er mormor weekend så børnefri. Du skal da se hulen også😀 Er det ved Klank han skal til fodbold ?",
+        "date": "28/11/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Så skal du høre om de børn de har. Og hvis hun ingen har er det sikkert også galt, så er hun helt sikkert bims i et eller andet omfang.\nJa det er de j",
+        "date": "03/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Jeg ved det heller ikke.\nI mine unge dage, var der ikke sovs på.\nDet er der nu.\nDet kan få folk op af stolene.\nImponerende.",
+        "date": "04/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Har lige “sunget” gin n juice med en kollega på karaoke til firmajulefrokost🫣",
+        "date": "05/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Lys",
+        "text": "Det ene barn opfører noget krybespil teater",
+        "date": "06/12/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Barnedåb i Løvel. Jeg vil bare gerne være hjemme til Rabders-AGF kl 16. Nu hvor det har ødelagt min mulighed for at tage på stadion🤬",
+        "date": "07/12/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Holst",
+        "text": "What. Har børnene ingen arme? 😱😂",
+        "date": "07/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Har du haft pungen fremme Olsen😂",
+        "date": "07/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Jeg faldt også i søvn i mundelstrup for et par uger siden. Vågnede heldigvis da vi kørte forbi Sabro kro så jeg kunne komme af ved næste stop. Men måt",
+        "date": "08/12/2025",
+        "pattern": "søvn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Kan ikke abstrahere for det der rullet i børnefingre",
+        "date": "12/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Og børnenes bussemænd, skidt fra negle, kløen i røven osv.",
+        "date": "12/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Den er jo ældgammel. Lidt ala “alle børnene sad på julemandens skød…”\n‎[13.12.2025, 19.25.33] Wiz: ‎billede udeladt",
+        "date": "13/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Wiz",
+        "text": "Babyer og morgen søndagsfodbold 😬",
+        "date": "14/12/2025",
+        "pattern": "baby"
+      },
+      {
+        "sender": "Wiz",
+        "text": "To små børn Ellis og Arthur, de er deromkring 5-7år",
+        "date": "17/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Low",
+        "text": "Smag på børnenes nødder",
+        "date": "17/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Så fik jeg lige skabt en lille situation efter fodbold i dag. En af de andre havde øl med. Så fik han selv en inden vi gik i gang, tre under kampen og",
+        "date": "17/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Han ser altid helt forhutlet ud. Men han har da kone og børn og er også træner i klubben🤷‍♂️",
+        "date": "17/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Hvad med Annabelsen og barnepige?",
+        "date": "18/12/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Holst",
+        "text": "Hverken limfjordsporter eller Wild flower. Til gengæld katapulteret 40 år tilbage til barndommen. Det kan da også noget😂",
+        "date": "19/12/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Alene hjemme med kids.\nVi er gået fra at skulle spise pizza, til hotdogs, til pølsemix.\nSå det var en deroute.\nUngerne gad ikke pizza og der var ingen",
+        "date": "20/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "Så er det tonight Fynne? Bytur Zami style.\n\nJeg sidder glar til at læse updates.\nTænker den står på en pind, når ungerne er puttet. ‎<Denne besked er ",
+        "date": "20/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Low",
+        "text": "Nok mere i en tømmermændsbefængt koger: håret lugter af røg, munden er coatet af en blanding af hår og vat som et glemt askebæger, smagen er gammel øl",
+        "date": "21/12/2025",
+        "pattern": "søvn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Ja. Karina og ungerne lavede det i går\n‎[24.12.2025, 09.29.54] Nizzle 3000: ‎billede udeladt\n‎[24.12.2025, 09.31.05] Lys: ‎billede udeladt",
+        "date": "24/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Holst",
+        "text": "Alt overstået. Børn lykkelige og ingen konflikter om gaver. Første gang i 17 år. 😂 Nu er der ryddet op og vasket op. Tænker svigerforældre går i seng ",
+        "date": "24/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Fyn",
+        "text": "mig og ungerne er i tvmidtvest nu her.. noget skøjtebane besøg",
+        "date": "25/12/2025",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "Nåh det var derfor du ville tage til Viborg igår.\nSå kunne jeg tumle med at skulle hjem med tømmermænd og på work imorgen, imedens de bare vågner og f",
+        "date": "26/12/2025",
+        "pattern": "vågner"
+      },
+      {
+        "sender": "Wiz",
+        "text": "Sidder du frivilligt for \ndigselv og ser det? Er det ik en børnefilm ?",
+        "date": "27/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Rob",
+        "text": "Og så nummer 2 er hvert vores ældste barn..",
+        "date": "30/12/2025",
+        "pattern": "barn"
+      },
+      {
+        "sender": "Wiz",
+        "text": "Vi skal være samlet i min familie for en gangs skyld. Sidst vi var det, var da jeg boede hjemme. To søstre hjemme fra London og lillebror hjemme fra D",
+        "date": "31/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Nizzle 3000",
+        "text": "Svært at vurdere mht mængden. Der er 7 voksne. Dine børn spiser vel også en del.",
+        "date": "31/12/2025",
+        "pattern": "børn"
+      },
+      {
+        "sender": "Holst",
+        "text": "Breakfast for champions😀 her vildmarksbad og afslapning. Ungerne får pandekager med is og nutella",
+        "date": "01/01/2026",
+        "pattern": "unge"
+      },
+      {
+        "sender": "Rob",
+        "text": "Nu skal jeg lige igennem en nat med dæmoner og sikkert meget sporadisk søvn.\nSå arbejdsdagen imorgen, kan blive ekstra ond.",
+        "date": "01/01/2026",
+        "pattern": "søvn"
+      },
+      {
+        "sender": "Holst",
+        "text": "Børn skal jo op og afsted. Så det er jo ikke noget med at sove længe. Og der kommer sikkert sne i nat så skolebussen ikke kan køre. Stakkels far😱\n‎[05",
+        "date": "04/01/2026",
+        "pattern": "stakkels far"
+      }
+    ],
+    "byPerson": {
+      "Holst": 316,
+      "Rob": 1118,
+      "Fyn": 175,
+      "Comput": 134,
+      "Zami": 96,
+      "Low": 140,
+      "Nizzle 3000": 574,
+      "Lys": 117,
+      "Wiz": 182,
+      "Døring": 180
+    }
+  },
+  "gifKing": [
+    {
+      "name": "Rob",
+      "gifs": 676,
+      "images": 5972,
+      "videos": 220,
+      "total": 6906,
+      "color": "#e94560"
+    },
+    {
+      "name": "Wiz",
+      "gifs": 240,
+      "images": 2208,
+      "videos": 122,
+      "total": 2580,
+      "color": "#ffd700"
+    },
+    {
+      "name": "Nizzle 3000",
+      "gifs": 294,
+      "images": 1918,
+      "videos": 68,
+      "total": 2295,
+      "color": "#00d4ff"
+    },
+    {
+      "name": "Low",
+      "gifs": 193,
+      "images": 1861,
+      "videos": 59,
+      "total": 2123,
+      "color": "#00ff88"
+    },
+    {
+      "name": "Fyn",
+      "gifs": 193,
+      "images": 1504,
+      "videos": 48,
+      "total": 1762,
+      "color": "#ff6b6b"
+    },
+    {
+      "name": "Holst",
+      "gifs": 83,
+      "images": 1299,
+      "videos": 36,
+      "total": 1423,
+      "color": "#06b6d4"
+    },
+    {
+      "name": "Comput",
+      "gifs": 72,
+      "images": 1057,
+      "videos": 35,
+      "total": 1164,
+      "color": "#a855f7"
+    },
+    {
+      "name": "Lys",
+      "gifs": 109,
+      "images": 958,
+      "videos": 53,
+      "total": 1127,
+      "color": "#f97316"
+    },
+    {
+      "name": "Døring",
+      "gifs": 84,
+      "images": 682,
+      "videos": 24,
+      "total": 793,
+      "color": "#84cc16"
+    },
+    {
+      "name": "Zami",
+      "gifs": 59,
+      "images": 656,
+      "videos": 25,
+      "total": 743,
+      "color": "#ec4899"
+    }
+  ],
+  "relationshipWeb": {
+    "nodes": [
+      {
+        "id": "Rob",
+        "messages": 46850,
+        "color": "#e94560"
+      },
+      {
+        "id": "Nizzle 3000",
+        "messages": 20205,
+        "color": "#00d4ff"
+      },
+      {
+        "id": "Low",
+        "messages": 15690,
+        "color": "#00ff88"
+      },
+      {
+        "id": "Wiz",
+        "messages": 15464,
+        "color": "#ffd700"
+      },
+      {
+        "id": "Fyn",
+        "messages": 14818,
+        "color": "#ff6b6b"
+      },
+      {
+        "id": "Comput",
+        "messages": 8832,
+        "color": "#a855f7"
+      },
+      {
+        "id": "Holst",
+        "messages": 8681,
+        "color": "#06b6d4"
+      },
+      {
+        "id": "Lys",
+        "messages": 7366,
+        "color": "#f97316"
+      },
+      {
+        "id": "Døring",
+        "messages": 6174,
+        "color": "#84cc16"
+      },
+      {
+        "id": "Zami",
+        "messages": 4859,
+        "color": "#ec4899"
+      }
+    ],
+    "links": [
+      {
+        "source": "Rob",
+        "target": "Comput",
+        "value": 3861
+      },
+      {
+        "source": "Rob",
+        "target": "Wiz",
+        "value": 8901
+      },
+      {
+        "source": "Rob",
+        "target": "Nizzle 3000",
+        "value": 13840
+      },
+      {
+        "source": "Rob",
+        "target": "Low",
+        "value": 7756
+      },
+      {
+        "source": "Rob",
+        "target": "Holst",
+        "value": 5380
+      },
+      {
+        "source": "Rob",
+        "target": "Zami",
+        "value": 2839
+      },
+      {
+        "source": "Rob",
+        "target": "Fyn",
+        "value": 8882
+      },
+      {
+        "source": "Rob",
+        "target": "Lys",
+        "value": 4333
+      },
+      {
+        "source": "Rob",
+        "target": "Døring",
+        "value": 2887
+      },
+      {
+        "source": "Comput",
+        "target": "Fyn",
+        "value": 1283
+      },
+      {
+        "source": "Comput",
+        "target": "Low",
+        "value": 1352
+      },
+      {
+        "source": "Comput",
+        "target": "Wiz",
+        "value": 1320
+      },
+      {
+        "source": "Comput",
+        "target": "Zami",
+        "value": 450
+      },
+      {
+        "source": "Comput",
+        "target": "Holst",
+        "value": 973
+      },
+      {
+        "source": "Comput",
+        "target": "Nizzle 3000",
+        "value": 1877
+      },
+      {
+        "source": "Comput",
+        "target": "Lys",
+        "value": 431
+      },
+      {
+        "source": "Comput",
+        "target": "Døring",
+        "value": 495
+      },
+      {
+        "source": "Fyn",
+        "target": "Nizzle 3000",
+        "value": 3532
+      },
+      {
+        "source": "Fyn",
+        "target": "Low",
+        "value": 1856
+      },
+      {
+        "source": "Fyn",
+        "target": "Holst",
+        "value": 1166
+      },
+      {
+        "source": "Fyn",
+        "target": "Lys",
+        "value": 1382
+      },
+      {
+        "source": "Fyn",
+        "target": "Zami",
+        "value": 676
+      },
+      {
+        "source": "Fyn",
+        "target": "Wiz",
+        "value": 1777
+      },
+      {
+        "source": "Fyn",
+        "target": "Døring",
+        "value": 800
+      },
+      {
+        "source": "Wiz",
+        "target": "Low",
+        "value": 2753
+      },
+      {
+        "source": "Wiz",
+        "target": "Nizzle 3000",
+        "value": 3615
+      },
+      {
+        "source": "Wiz",
+        "target": "Døring",
+        "value": 1440
+      },
+      {
+        "source": "Wiz",
+        "target": "Zami",
+        "value": 1012
+      },
+      {
+        "source": "Wiz",
+        "target": "Holst",
+        "value": 1825
+      },
+      {
+        "source": "Wiz",
+        "target": "Lys",
+        "value": 1295
+      },
+      {
+        "source": "Nizzle 3000",
+        "target": "Low",
+        "value": 3102
+      },
+      {
+        "source": "Nizzle 3000",
+        "target": "Holst",
+        "value": 2284
+      },
+      {
+        "source": "Nizzle 3000",
+        "target": "Zami",
+        "value": 1171
+      },
+      {
+        "source": "Nizzle 3000",
+        "target": "Lys",
+        "value": 1779
+      },
+      {
+        "source": "Nizzle 3000",
+        "target": "Døring",
+        "value": 1504
+      },
+      {
+        "source": "Low",
+        "target": "Holst",
+        "value": 1696
+      },
+      {
+        "source": "Low",
+        "target": "Zami",
+        "value": 737
+      },
+      {
+        "source": "Low",
+        "target": "Døring",
+        "value": 944
+      },
+      {
+        "source": "Low",
+        "target": "Lys",
+        "value": 1041
+      },
+      {
+        "source": "Holst",
+        "target": "Zami",
+        "value": 617
+      },
+      {
+        "source": "Holst",
+        "target": "Døring",
+        "value": 789
+      },
+      {
+        "source": "Holst",
+        "target": "Lys",
+        "value": 806
+      },
+      {
+        "source": "Zami",
+        "target": "Døring",
+        "value": 309
+      },
+      {
+        "source": "Zami",
+        "target": "Lys",
+        "value": 367
+      },
+      {
+        "source": "Døring",
+        "target": "Lys",
+        "value": 438
+      }
+    ]
+  },
   "bromance": {
     "pair": [
       "Rob",
