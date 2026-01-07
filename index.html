@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Drengene</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav id="nav">
+            <button class="nav-btn active" data-page="home">🏠</button>
+            <button class="nav-btn" data-page="awards">🏆</button>
+            <button class="nav-btn" data-page="members">👥</button>
+            <button class="nav-btn" data-page="heatmap">🔥</button>
+            <button class="nav-btn" data-page="words">☁️</button>
+            <button class="nav-btn" data-page="quotes">💬</button>
+        </nav>
+
+        <!-- Pages Container -->
+        <main id="pages">
+            <!-- Home Page -->
+            <section id="page-home" class="page active">
+                <div class="page-content">
+                    <h1 class="hero-title">Drengene</h1>
+                    <p class="hero-subtitle">6+ år med venskab, øl og dårlige jokes</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-messages">-</div>
+                            <div class="stat-label">Beskeder</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-years">-</div>
+                            <div class="stat-label">År</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="stat-members">-</div>
+                            <div class="stat-label">Drenge</div>
+                        </div>
+                    </div>
+
+                    <div class="bromance-card">
+                        <div class="bromance-icon">💕</div>
+                        <div class="bromance-title">Årets Bromance</div>
+                        <div class="bromance-names" id="bromance-names">-</div>
+                        <div class="bromance-stat" id="bromance-stat">-</div>
+                    </div>
+
+                    <div class="group-names-section">
+                        <h3>Gruppenavne gennem tiderne</h3>
+                        <div class="group-names-scroll" id="group-names"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards Page -->
+            <section id="page-awards" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">🏆 Awards</h2>
+                    <div class="awards-list" id="awards-list"></div>
+                </div>
+            </section>
+
+            <!-- Members Page -->
+            <section id="page-members" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">👥 Drengene</h2>
+                    <div class="members-list" id="members-list"></div>
+                </div>
+            </section>
+
+            <!-- Heatmap Page -->
+            <section id="page-heatmap" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">🔥 Aktivitet</h2>
+                    <p class="page-subtitle">Hvornår er gruppen mest aktiv?</p>
+                    <div class="heatmap-container">
+                        <div class="heatmap-labels">
+                            <span>Man</span><span>Tir</span><span>Ons</span><span>Tor</span><span>Fre</span><span>Lør</span><span>Søn</span>
+                        </div>
+                        <div class="heatmap-grid" id="heatmap-grid"></div>
+                        <div class="heatmap-hours">
+                            <span>00</span><span>06</span><span>12</span><span>18</span><span>23</span>
+                        </div>
+                    </div>
+                    <div class="heatmap-legend">
+                        <span>Stille</span>
+                        <div class="legend-bar"></div>
+                        <span>Party 🎉</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Word Clouds Page -->
+            <section id="page-words" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">☁️ Ordskyer</h2>
+                    <p class="page-subtitle">Hvad snakker hver person om?</p>
+                    <div class="word-cloud-selector" id="word-cloud-selector"></div>
+                    <div class="word-cloud-display" id="word-cloud-display"></div>
+                </div>
+            </section>
+
+            <!-- Quotes Page -->
+            <section id="page-quotes" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">💬 Tidskapsel</h2>
+                    <p class="page-subtitle">De sjoveste øjeblikke</p>
+                    <div class="quotes-container" id="quotes-container"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
