@@ -611,123 +611,172 @@ function renderPersonality() {
 
 function calculatePersonalityProfiles() {
     const members = DATA.meta.members;
-    const profiles = [];
 
-    // Calculate ranges for normalization
-    const allMessages = members.map(m => DATA.members[m]?.messages || 0);
-    const maxMessages = Math.max(...allMessages);
-
-    const allWords = members.map(m => DATA.members[m]?.words || 0);
-    const allMsgs = members.map(m => DATA.members[m]?.messages || 1);
-    const avgWordLengths = members.map((m, i) => allWords[i] / allMsgs[i]);
-    const maxAvgWords = Math.max(...avgWordLengths);
-
-    const allEmojis = members.map(m => DATA.members[m]?.emojis || 0);
-    const emojiRatios = members.map((m, i) => allEmojis[i] / allMsgs[i]);
-    const maxEmojiRatio = Math.max(...emojiRatios);
-
-    const allReplySeconds = members.map(m => DATA.replySpeed?.[m]?.avgSeconds || 600);
-    const minReply = Math.min(...allReplySeconds);
-    const maxReply = Math.max(...allReplySeconds);
-
-    // Personality type definitions with archetypes
-    const archetypes = [
-        { type: 'Fyrværkeriet', emoji: '🎆', tagline: 'Altid klar med en besked og et grin', traits: ['social', 'expressive', 'fast'] },
-        { type: 'Filosoffen', emoji: '🤔', tagline: 'Tænker før der tales, kvalitet over kvantitet', traits: ['thoughtful', 'verbose', 'calm'] },
-        { type: 'Hygge-Mesteren', emoji: '🛋️', tagline: 'Holder gruppen sammen med god stemning', traits: ['positive', 'consistent', 'social'] },
-        { type: 'Natteravnen', emoji: '🦉', tagline: 'De bedste samtaler sker efter midnat', traits: ['nightowl', 'expressive'] },
-        { type: 'Spøgfulden', emoji: '👻', tagline: 'Dukker op når du mindst venter det', traits: ['ghost', 'burst'] },
-        { type: 'Diplomaten', emoji: '⚖️', tagline: 'Altid balanceret, aldrig for meget drama', traits: ['balanced', 'consistent'] },
-        { type: 'Mediekongen', emoji: '📸', tagline: 'Et billede siger mere end tusind ord', traits: ['visual', 'media'] },
-        { type: 'Energibomben', emoji: '⚡', tagline: 'Hurtig på aftrækkeren, altid engageret', traits: ['fast', 'social', 'expressive'] },
-        { type: 'Poeten', emoji: '✍️', tagline: 'Ordene flyder som en stille å', traits: ['verbose', 'thoughtful'] },
-        { type: 'Solstrålen', emoji: '☀️', tagline: 'Bringer lys og positivitet overalt', traits: ['positive', 'expressive'] }
-    ];
-
-    for (const name of members) {
+    // Calculate all metrics for ranking
+    const memberData = members.map(name => {
         const member = DATA.members[name];
-        if (!member) continue;
+        if (!member) return null;
 
         const sentiment = SENTIMENT?.byPerson?.[name];
         const replyData = DATA.replySpeed?.[name];
         const ghostData = DATA.ghostDetector?.[name];
 
-        // Calculate normalized scores (0-100)
-        const socialScore = (member.messages / maxMessages) * 100;
-        const wordsPerMsg = member.words / member.messages;
-        const verboseScore = (wordsPerMsg / maxAvgWords) * 100;
-        const emojiRatio = member.emojis / member.messages;
-        const expressiveScore = (emojiRatio / maxEmojiRatio) * 100;
-        const replySpeed = replyData?.avgSeconds || 600;
-        const speedScore = 100 - ((replySpeed - minReply) / (maxReply - minReply)) * 100;
-        const moodScore = sentiment ? ((sentiment.score + 25) / 50) * 100 : 50; // Normalize -25 to +25 => 0-100
-        const nightScore = ((member.lateNight || 0) / member.messages) * 1000;
-        const mediaRatio = (member.media / member.messages) * 100;
-        const ghostScore = ghostData?.longestGhost || 0;
+        return {
+            name,
+            member,
+            sentiment,
+            replyData,
+            ghostData,
+            messages: member.messages,
+            wordsPerMsg: member.words / member.messages,
+            emojiRatio: member.emojis / member.messages,
+            replySpeed: replyData?.avgSeconds || 600,
+            moodScore: sentiment?.score || 0,
+            nightRatio: (member.lateNight || 0) / member.messages,
+            morningRatio: (member.earlyMorning || 0) / member.messages,
+            mediaRatio: member.media / member.messages,
+            ghostDays: ghostData?.longestGhost || 0,
+            laughRatio: (member.laughs || 0) / member.messages,
+            questionRatio: (member.questions || 0) / member.messages
+        };
+    }).filter(Boolean);
 
-        // Determine primary archetype based on dominant traits
-        let bestArchetype = archetypes[5]; // Default to Diplomaten
-        let bestScore = 0;
+    // Rank each person on different dimensions (1 = best/most)
+    const rankings = {};
+    const rankBy = (key, ascending = false) => {
+        const sorted = [...memberData].sort((a, b) => ascending ? a[key] - b[key] : b[key] - a[key]);
+        sorted.forEach((m, i) => {
+            if (!rankings[m.name]) rankings[m.name] = {};
+            rankings[m.name][key] = i + 1;
+        });
+    };
 
-        for (const arch of archetypes) {
-            let score = 0;
-            if (arch.traits.includes('social') && socialScore > 60) score += socialScore;
-            if (arch.traits.includes('expressive') && expressiveScore > 50) score += expressiveScore;
-            if (arch.traits.includes('fast') && speedScore > 70) score += speedScore;
-            if (arch.traits.includes('verbose') && verboseScore > 60) score += verboseScore;
-            if (arch.traits.includes('thoughtful') && verboseScore > 50 && socialScore < 60) score += 50;
-            if (arch.traits.includes('positive') && moodScore > 65) score += moodScore;
-            if (arch.traits.includes('nightowl') && nightScore > 3) score += nightScore * 20;
-            if (arch.traits.includes('ghost') && ghostScore > 7) score += ghostScore * 5;
-            if (arch.traits.includes('visual') && mediaRatio > 12) score += mediaRatio * 3;
-            if (arch.traits.includes('balanced') && moodScore > 40 && moodScore < 60) score += 60;
-            if (arch.traits.includes('consistent') && !ghostData?.longestGhost) score += 40;
-            if (arch.traits.includes('calm') && speedScore < 50) score += 30;
-            if (arch.traits.includes('burst') && socialScore < 50 && ghostScore > 5) score += 50;
-            if (arch.traits.includes('media') && mediaRatio > 10) score += mediaRatio * 5;
+    rankBy('messages');           // Most active
+    rankBy('wordsPerMsg');        // Most verbose
+    rankBy('emojiRatio');         // Most expressive
+    rankBy('replySpeed', true);   // Fastest replier (lower is better)
+    rankBy('moodScore');          // Most positive
+    rankBy('nightRatio');         // Most night owl
+    rankBy('morningRatio');       // Most early bird
+    rankBy('mediaRatio');         // Most media sharing
+    rankBy('ghostDays');          // Biggest ghost
+    rankBy('laughRatio');         // Laughs most
 
-            if (score > bestScore) {
-                bestScore = score;
+    // Archetype definitions - each person gets their BEST FIT based on where they rank #1 or #2
+    const archetypes = {
+        'messages': { type: 'Snakkesansen', emoji: '💬', tagline: 'Har altid noget at sige' },
+        'wordsPerMsg': { type: 'Filosoffen', emoji: '🤔', tagline: 'Tænker før der tales, kvalitet over kvantitet' },
+        'emojiRatio': { type: 'Ekspressiven', emoji: '🎭', tagline: 'Følelser udtrykkes bedst med emojis' },
+        'replySpeed': { type: 'Energibomben', emoji: '⚡', tagline: 'Hurtig på aftrækkeren, altid engageret' },
+        'moodScore': { type: 'Solstrålen', emoji: '☀️', tagline: 'Bringer lys og positivitet overalt' },
+        'nightRatio': { type: 'Natteravnen', emoji: '🦉', tagline: 'De bedste samtaler sker efter midnat' },
+        'morningRatio': { type: 'Morgenfuglen', emoji: '🌅', tagline: 'Oppe med solen, klar til dagen' },
+        'mediaRatio': { type: 'Mediekongen', emoji: '📸', tagline: 'Et billede siger mere end tusind ord' },
+        'ghostDays': { type: 'Spøgelset', emoji: '👻', tagline: 'Dukker op når du mindst venter det' },
+        'laughRatio': { type: 'Grineren', emoji: '😂', tagline: 'Finder altid noget at grine af' }
+    };
+
+    // Secondary archetypes for variety
+    const secondaryArchetypes = [
+        { type: 'Hygge-Mesteren', emoji: '🛋️', tagline: 'Holder gruppen sammen med god stemning' },
+        { type: 'Diplomaten', emoji: '⚖️', tagline: 'Altid balanceret, aldrig for meget drama' },
+        { type: 'Realisten', emoji: '🌧️', tagline: 'Holder begge ben på jorden' },
+        { type: 'Entusiasten', emoji: '🎉', tagline: 'Altid klar på det næste eventyr' }
+    ];
+
+    // Assign archetypes - each person gets the trait where they rank highest
+    const usedArchetypes = new Set();
+    const profiles = [];
+
+    // Sort members by message count to process most active first
+    const sortedMembers = [...memberData].sort((a, b) => b.messages - a.messages);
+
+    for (const data of sortedMembers) {
+        const name = data.name;
+        const member = data.member;
+        const ranks = rankings[name];
+
+        // Find this person's best ranking that hasn't been taken
+        let bestArchetype = null;
+        let bestRank = 999;
+        let bestKey = null;
+
+        for (const [key, arch] of Object.entries(archetypes)) {
+            if (!usedArchetypes.has(arch.type) && ranks[key] < bestRank) {
+                bestRank = ranks[key];
                 bestArchetype = arch;
+                bestKey = key;
             }
         }
 
-        // Generate personalized tagline based on actual data
-        let tagline = bestArchetype.tagline;
-        if (bestArchetype.type === 'Fyrværkeriet' && member.messages > 40000) {
-            tagline = `${formatNumber(member.messages)} beskeder kan ikke tage fejl`;
-        } else if (bestArchetype.type === 'Solstrålen' && sentiment?.score > 20) {
-            tagline = `+${sentiment.score}% positivitet - gruppens lyspunkt`;
-        } else if (bestArchetype.type === 'Natteravnen' && member.lateNight > 200) {
-            tagline = `${member.lateNight} beskeder sendt efter midnat`;
-        } else if (bestArchetype.type === 'Mediekongen' && member.media > 5000) {
-            tagline = `${formatNumber(member.media)} billeder og videoer delt`;
+        // If all primary archetypes taken, use secondary
+        if (!bestArchetype) {
+            for (const arch of secondaryArchetypes) {
+                if (!usedArchetypes.has(arch.type)) {
+                    bestArchetype = arch;
+                    break;
+                }
+            }
         }
 
-        // Build traits array for display
+        // Fallback
+        if (!bestArchetype) {
+            bestArchetype = { type: 'Gruppens Hjerte', emoji: '❤️', tagline: 'En uundværlig del af fællesskabet' };
+        }
+
+        usedArchetypes.add(bestArchetype.type);
+
+        // Generate personalized tagline based on actual stats
+        let tagline = bestArchetype.tagline;
+        if (bestKey === 'messages' && member.messages > 30000) {
+            tagline = `${formatNumber(member.messages)} beskeder - gruppens motor`;
+        } else if (bestKey === 'moodScore' && data.moodScore > 15) {
+            tagline = `+${data.moodScore}% positivitet - gruppens lyspunkt`;
+        } else if (bestKey === 'nightRatio' && member.lateNight > 200) {
+            tagline = `${member.lateNight} beskeder sendt efter midnat`;
+        } else if (bestKey === 'mediaRatio' && member.media > 2000) {
+            tagline = `${formatNumber(member.media)} billeder og videoer delt`;
+        } else if (bestKey === 'replySpeed' && data.replyData) {
+            tagline = `Svarer på ${data.replyData.avgDisplay} i gennemsnit`;
+        } else if (bestKey === 'wordsPerMsg') {
+            tagline = `${data.wordsPerMsg.toFixed(1)} ord per besked i gennemsnit`;
+        } else if (bestKey === 'ghostDays' && data.ghostDays > 7) {
+            tagline = `Forsvandt i ${data.ghostDays} dage én gang`;
+        }
+
+        // Calculate normalized scores for display bars
+        const maxMessages = Math.max(...memberData.map(m => m.messages));
+        const maxWordsPerMsg = Math.max(...memberData.map(m => m.wordsPerMsg));
+        const maxEmojiRatio = Math.max(...memberData.map(m => m.emojiRatio));
+        const minReplySpeed = Math.min(...memberData.map(m => m.replySpeed));
+        const maxReplySpeed = Math.max(...memberData.map(m => m.replySpeed));
+
+        const socialScore = (data.messages / maxMessages) * 100;
+        const expressiveScore = (data.emojiRatio / maxEmojiRatio) * 100;
+        const speedScore = 100 - ((data.replySpeed - minReplySpeed) / (maxReplySpeed - minReplySpeed)) * 100;
+        const moodScoreNorm = ((data.moodScore + 25) / 50) * 100;
+
         const traits = [
             { label: 'Social Energi', percent: Math.min(100, socialScore), valueLabel: socialScore > 70 ? 'Ekstrovert' : socialScore > 40 ? 'Balanceret' : 'Introvert' },
             { label: 'Udtryksform', percent: Math.min(100, expressiveScore), valueLabel: expressiveScore > 60 ? 'Ekspressiv' : expressiveScore > 30 ? 'Moderat' : 'Reserveret' },
-            { label: 'Svarhastighed', percent: Math.min(100, speedScore), valueLabel: replyData?.avgDisplay || 'Ukendt' },
-            { label: 'Humør', percent: Math.min(100, Math.max(0, moodScore)), valueLabel: moodScore > 65 ? 'Positiv' : moodScore > 45 ? 'Neutral' : 'Seriøs' }
+            { label: 'Svarhastighed', percent: Math.min(100, speedScore), valueLabel: data.replyData?.avgDisplay || 'Ukendt' },
+            { label: 'Humør', percent: Math.min(100, Math.max(0, moodScoreNorm)), valueLabel: moodScoreNorm > 65 ? 'Positiv' : moodScoreNorm > 45 ? 'Neutral' : 'Seriøs' }
         ];
 
-        // Build badges
+        // Build badges based on top rankings
         const badges = [];
-        if (member.questions > 2000) badges.push({ icon: '❓', label: 'Spørgelansen' });
-        if (member.laughs > 1000) badges.push({ icon: '😂', label: 'Griner mest' });
-        if (member.lateNight > 200) badges.push({ icon: '🌙', label: 'Nataktiv' });
-        if (member.earlyMorning > 200) badges.push({ icon: '🌅', label: 'Tidlig fugl' });
-        if (member.media > 2000) badges.push({ icon: '📷', label: 'Billedkunstner' });
-        if (member.gifs > 200) badges.push({ icon: '🎬', label: 'GIF-mester' });
-        if (speedScore > 80) badges.push({ icon: '⚡', label: 'Lynsvarer' });
-        if (ghostData?.longestGhost > 14) badges.push({ icon: '👻', label: 'Spøgelse' });
-        if (sentiment?.score > 15) badges.push({ icon: '☀️', label: 'Solskin' });
-        if (sentiment?.score < -3) badges.push({ icon: '🌧️', label: 'Realist' });
+        if (ranks.messages <= 2) badges.push({ icon: '💬', label: 'Snakker mest' });
+        if (ranks.wordsPerMsg <= 2) badges.push({ icon: '📝', label: 'Ordrig' });
+        if (ranks.emojiRatio <= 2) badges.push({ icon: '😀', label: 'Emoji-fan' });
+        if (ranks.replySpeed <= 2) badges.push({ icon: '⚡', label: 'Lynsvarer' });
+        if (ranks.moodScore <= 2) badges.push({ icon: '☀️', label: 'Solskin' });
+        if (ranks.nightRatio <= 2) badges.push({ icon: '🌙', label: 'Nataktiv' });
+        if (ranks.morningRatio <= 2) badges.push({ icon: '🌅', label: 'Tidlig fugl' });
+        if (ranks.mediaRatio <= 2) badges.push({ icon: '📷', label: 'Billedkunstner' });
+        if (ranks.laughRatio <= 2) badges.push({ icon: '😂', label: 'Griner mest' });
         if (member.swears > 800) badges.push({ icon: '🤬', label: 'Bandeansen' });
-
-        // Limit badges to 4 most relevant
-        const limitedBadges = badges.slice(0, 4);
+        if (member.questions > 2000) badges.push({ icon: '❓', label: 'Spørgelansen' });
+        if (data.moodScore < -3) badges.push({ icon: '🌧️', label: 'Realist' });
 
         profiles.push({
             name,
@@ -736,12 +785,9 @@ function calculatePersonalityProfiles() {
             emoji: bestArchetype.emoji,
             tagline,
             traits,
-            badges: limitedBadges
+            badges: badges.slice(0, 4)
         });
     }
-
-    // Sort by message count (most active first)
-    profiles.sort((a, b) => DATA.members[b.name].messages - DATA.members[a.name].messages);
 
     return profiles;
 }
