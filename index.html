@@ -48,6 +48,7 @@
                 <li><button class="menu-item" data-page="replyspeed"><span class="menu-icon">⚡</span>Svartid</button></li>
                 <li><button class="menu-item" data-page="ghost"><span class="menu-icon">👻</span>Spøgelser</button></li>
                 <li><button class="menu-item" data-page="topics"><span class="menu-icon">📈</span>Trends</button></li>
+                <li><button class="menu-item" data-page="mood"><span class="menu-icon">😊</span>Humør</button></li>
             </ul>
         </nav>
 
@@ -203,10 +204,28 @@
                     <div class="topics-container" id="topics-container"></div>
                 </div>
             </section>
+
+            <!-- Mood/Sentiment Page -->
+            <section id="page-mood" class="page">
+                <div class="page-content">
+                    <h2 class="page-title">😊 Humør</h2>
+                    <p class="page-subtitle">Gruppens følelsesmæssige rejse</p>
+
+                    <h3 class="section-title">Hvem er mest positiv?</h3>
+                    <div class="mood-persons" id="mood-persons"></div>
+
+                    <h3 class="section-title">Humør over tid</h3>
+                    <div class="mood-timeline" id="mood-timeline"></div>
+
+                    <h3 class="section-title">Ugedage</h3>
+                    <div class="mood-weekdays" id="mood-weekdays"></div>
+                </div>
+            </section>
         </main>
     </div>
 
-    <script src="js/data.js?v=3"></script>
-    <script src="js/app.js?v=3"></script>
+    <script src="js/data.js?v=4"></script>
+    <script src="js/sentiment.js?v=1"></script>
+    <script src="js/app.js?v=4"></script>
 </body>
 </html>

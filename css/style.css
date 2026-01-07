@@ -433,6 +433,39 @@ body {
 .topics-words { display: flex; flex-wrap: wrap; gap: 8px; }
 .topic-word { padding: 6px 12px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; color: var(--accent); }
 
+/* Mood/Sentiment */
+.mood-persons { display: flex; flex-direction: column; gap: 16px; }
+.mood-person-card { background: var(--bg-card); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.mood-person-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.mood-person-emoji { font-size: 1.5rem; }
+.mood-person-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; flex: 1; }
+.mood-person-score { font-size: 1.1rem; font-weight: 700; }
+.mood-bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 8px; }
+.mood-bar-positive { background: #22c55e; }
+.mood-bar-neutral { background: #6b7280; }
+.mood-bar-negative { background: #ef4444; }
+.mood-bar-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-secondary); }
+.mood-bar-labels .positive { color: #22c55e; }
+.mood-bar-labels .neutral { color: #6b7280; }
+.mood-bar-labels .negative { color: #ef4444; }
+
+.mood-timeline { background: var(--bg-card); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.mood-timeline-chart { display: flex; align-items: center; height: 100px; gap: 1px; position: relative; }
+.mood-timeline-chart::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255, 255, 255, 0.2); }
+.mood-timeline-bar { flex: 1; height: 100%; position: relative; }
+.mood-timeline-fill { position: absolute; left: 0; right: 0; border-radius: 2px; }
+.mood-timeline-fill.positive { background: #22c55e; }
+.mood-timeline-fill.negative { background: #ef4444; }
+.mood-timeline-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.75rem; color: var(--text-secondary); }
+
+.mood-weekdays { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.mood-weekday { background: var(--bg-card); border-radius: 12px; padding: 12px 8px; text-align: center; flex: 1; min-width: 40px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.mood-weekday-name { display: block; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 4px; }
+.mood-weekday-emoji { display: block; font-size: 1.25rem; margin-bottom: 2px; }
+.mood-weekday-score { display: block; font-size: 0.7rem; font-weight: 600; }
+
+.empty-state { text-align: center; color: var(--text-secondary); padding: 20px; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }

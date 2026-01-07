@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderReplySpeed();
     renderGhostDetector();
     renderTopicTrends();
+    renderMood();
 });
 
 // Slide-in Menu
@@ -438,4 +439,91 @@ function renderTopicTrends() {
             </div>
         `;
     }).join('');
+}
+
+// Mood/Sentiment Page
+function renderMood() {
+    const personsContainer = document.getElementById('mood-persons');
+    const timelineContainer = document.getElementById('mood-timeline');
+    const weekdaysContainer = document.getElementById('mood-weekdays');
+
+    // Check if sentiment data exists
+    if (typeof SENTIMENT === 'undefined' || !SENTIMENT) {
+        personsContainer.innerHTML = '<p class="empty-state">Sentiment data ikke tilgængelig</p>';
+        timelineContainer.innerHTML = '';
+        weekdaysContainer.innerHTML = '';
+        return;
+    }
+
+    // Persons - sorted by positivity score
+    if (SENTIMENT.byPerson) {
+        const sorted = Object.entries(SENTIMENT.byPerson)
+            .sort((a, b) => b[1].score - a[1].score);
+
+        personsContainer.innerHTML = sorted.map(([name, data], index) => {
+            const emoji = data.score > 10 ? '😊' : data.score > 0 ? '🙂' : data.score > -10 ? '😐' : '😔';
+            return `
+                <div class="mood-person-card">
+                    <div class="mood-person-header">
+                        <span class="mood-person-emoji">${emoji}</span>
+                        <span class="mood-person-name" style="color: ${data.color}">${name}</span>
+                        <span class="mood-person-score" style="color: ${data.score >= 0 ? 'var(--accent)' : 'var(--accent-pink)'}">${data.score > 0 ? '+' : ''}${data.score}%</span>
+                    </div>
+                    <div class="mood-bar">
+                        <div class="mood-bar-positive" style="width: ${data.positive}%"></div>
+                        <div class="mood-bar-neutral" style="width: ${data.neutral}%"></div>
+                        <div class="mood-bar-negative" style="width: ${data.negative}%"></div>
+                    </div>
+                    <div class="mood-bar-labels">
+                        <span class="positive">😊 ${data.positive}%</span>
+                        <span class="neutral">😐 ${data.neutral}%</span>
+                        <span class="negative">😔 ${data.negative}%</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // Timeline - monthly mood
+    if (SENTIMENT.timeline && SENTIMENT.timeline.length > 0) {
+        const maxScore = Math.max(...SENTIMENT.timeline.map(t => Math.abs(t.score)));
+
+        timelineContainer.innerHTML = `
+            <div class="mood-timeline-chart">
+                ${SENTIMENT.timeline.map(t => {
+                    const height = Math.abs(t.score) / maxScore * 50;
+                    const isPositive = t.score >= 0;
+                    return `
+                        <div class="mood-timeline-bar" title="${t.month}: ${t.score > 0 ? '+' : ''}${t.score}%">
+                            <div class="mood-timeline-fill ${isPositive ? 'positive' : 'negative'}"
+                                 style="height: ${height}px; ${isPositive ? 'bottom: 50%' : 'top: 50%'}"></div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+            <div class="mood-timeline-labels">
+                <span>${SENTIMENT.timeline[0].month}</span>
+                <span>${SENTIMENT.timeline[SENTIMENT.timeline.length - 1].month}</span>
+            </div>
+        `;
+    }
+
+    // Weekdays
+    if (SENTIMENT.byWeekday) {
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        const dayNames = ['Man', 'Tir', 'Ons', 'Tor', 'Fre', 'Lør', 'Søn'];
+
+        weekdaysContainer.innerHTML = days.map((day, i) => {
+            const data = SENTIMENT.byWeekday[day];
+            if (!data) return '';
+            const emoji = data.score > 5 ? '😊' : data.score > 0 ? '🙂' : data.score > -5 ? '😐' : '😔';
+            return `
+                <div class="mood-weekday">
+                    <span class="mood-weekday-name">${dayNames[i]}</span>
+                    <span class="mood-weekday-emoji">${emoji}</span>
+                    <span class="mood-weekday-score" style="color: ${data.score >= 0 ? 'var(--accent)' : 'var(--accent-pink)'}">${data.score > 0 ? '+' : ''}${data.score}%</span>
+                </div>
+            `;
+        }).join('');
+    }
 }
