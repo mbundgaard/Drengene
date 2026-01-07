@@ -4556,6 +4556,712 @@ const DATA = {
       }
     ]
   },
+  "replySpeed": {
+    "Rob": {
+      "avgSeconds": 381.2,
+      "avgDisplay": "6.4 min",
+      "totalReplies": 27686,
+      "color": "#e94560"
+    },
+    "Nizzle 3000": {
+      "avgSeconds": 373.9,
+      "avgDisplay": "6.2 min",
+      "totalReplies": 15353,
+      "color": "#00d4ff"
+    },
+    "Low": {
+      "avgSeconds": 468.0,
+      "avgDisplay": "7.8 min",
+      "totalReplies": 9651,
+      "color": "#00ff88"
+    },
+    "Wiz": {
+      "avgSeconds": 353.3,
+      "avgDisplay": "5.9 min",
+      "totalReplies": 11215,
+      "color": "#ffd700"
+    },
+    "Fyn": {
+      "avgSeconds": 507.4,
+      "avgDisplay": "8.5 min",
+      "totalReplies": 9711,
+      "color": "#ff6b6b"
+    },
+    "Comput": {
+      "avgSeconds": 399.4,
+      "avgDisplay": "6.7 min",
+      "totalReplies": 5502,
+      "color": "#a855f7"
+    },
+    "Holst": {
+      "avgSeconds": 603.9,
+      "avgDisplay": "10.1 min",
+      "totalReplies": 6692,
+      "color": "#06b6d4"
+    },
+    "Lys": {
+      "avgSeconds": 458.7,
+      "avgDisplay": "7.6 min",
+      "totalReplies": 5570,
+      "color": "#f97316"
+    },
+    "Døring": {
+      "avgSeconds": 484.8,
+      "avgDisplay": "8.1 min",
+      "totalReplies": 4260,
+      "color": "#84cc16"
+    },
+    "Zami": {
+      "avgSeconds": 575.5,
+      "avgDisplay": "9.6 min",
+      "totalReplies": 3661,
+      "color": "#ec4899"
+    }
+  },
+  "ghostDetector": {
+    "Nizzle 3000": {
+      "longestGhost": 33,
+      "longestStart": "03/07/2023",
+      "longestEnd": "05/08/2023",
+      "totalGhosts": 1,
+      "allGhosts": [
+        {
+          "start": "03/07/2023",
+          "end": "05/08/2023",
+          "days": 33
+        }
+      ],
+      "color": "#00d4ff"
+    },
+    "Wiz": {
+      "longestGhost": 10,
+      "longestStart": "25/07/2021",
+      "longestEnd": "04/08/2021",
+      "totalGhosts": 1,
+      "allGhosts": [
+        {
+          "start": "25/07/2021",
+          "end": "04/08/2021",
+          "days": 10
+        }
+      ],
+      "color": "#ffd700"
+    },
+    "Comput": {
+      "longestGhost": 15,
+      "longestStart": "21/08/2020",
+      "longestEnd": "05/09/2020",
+      "totalGhosts": 7,
+      "allGhosts": [
+        {
+          "start": "21/08/2020",
+          "end": "05/09/2020",
+          "days": 15
+        },
+        {
+          "start": "18/07/2020",
+          "end": "29/07/2020",
+          "days": 11
+        },
+        {
+          "start": "19/10/2019",
+          "end": "29/10/2019",
+          "days": 10
+        },
+        {
+          "start": "28/09/2020",
+          "end": "07/10/2020",
+          "days": 9
+        },
+        {
+          "start": "19/07/2023",
+          "end": "28/07/2023",
+          "days": 8
+        }
+      ],
+      "color": "#a855f7"
+    },
+    "Holst": {
+      "longestGhost": 23,
+      "longestStart": "07/04/2022",
+      "longestEnd": "30/04/2022",
+      "totalGhosts": 1,
+      "allGhosts": [
+        {
+          "start": "07/04/2022",
+          "end": "30/04/2022",
+          "days": 23
+        }
+      ],
+      "color": "#06b6d4"
+    },
+    "Døring": {
+      "longestGhost": 39,
+      "longestStart": "26/06/2020",
+      "longestEnd": "04/08/2020",
+      "totalGhosts": 15,
+      "allGhosts": [
+        {
+          "start": "26/06/2020",
+          "end": "04/08/2020",
+          "days": 39
+        },
+        {
+          "start": "08/11/2025",
+          "end": "25/11/2025",
+          "days": 17
+        },
+        {
+          "start": "04/11/2019",
+          "end": "19/11/2019",
+          "days": 14
+        },
+        {
+          "start": "21/11/2019",
+          "end": "04/12/2019",
+          "days": 12
+        },
+        {
+          "start": "27/08/2020",
+          "end": "05/09/2020",
+          "days": 9
+        }
+      ],
+      "color": "#84cc16"
+    },
+    "Zami": {
+      "longestGhost": 24,
+      "longestStart": "25/05/2025",
+      "longestEnd": "18/06/2025",
+      "totalGhosts": 32,
+      "allGhosts": [
+        {
+          "start": "25/05/2025",
+          "end": "18/06/2025",
+          "days": 24
+        },
+        {
+          "start": "07/05/2024",
+          "end": "30/05/2024",
+          "days": 22
+        },
+        {
+          "start": "23/10/2025",
+          "end": "11/11/2025",
+          "days": 18
+        },
+        {
+          "start": "05/01/2025",
+          "end": "23/01/2025",
+          "days": 17
+        },
+        {
+          "start": "17/04/2025",
+          "end": "05/05/2025",
+          "days": 17
+        }
+      ],
+      "color": "#ec4899"
+    }
+  },
+  "topicTrends": {
+    "2019": [
+      {
+        "word": "bliver",
+        "count": 102
+      },
+      {
+        "word": "sådan",
+        "count": 82
+      },
+      {
+        "word": "havde",
+        "count": 71
+      },
+      {
+        "word": "skulle",
+        "count": 60
+      },
+      {
+        "word": "måske",
+        "count": 58
+      },
+      {
+        "word": "nogle",
+        "count": 54
+      },
+      {
+        "word": "helt",
+        "count": 54
+      },
+      {
+        "word": "tænker",
+        "count": 54
+      },
+      {
+        "word": "ville",
+        "count": 53
+      },
+      {
+        "word": "fedt",
+        "count": 49
+      },
+      {
+        "word": "kunne",
+        "count": 48
+      },
+      {
+        "word": "hjem",
+        "count": 47
+      },
+      {
+        "word": "hele",
+        "count": 46
+      },
+      {
+        "word": "gang",
+        "count": 45
+      },
+      {
+        "word": "hehe",
+        "count": 42
+      }
+    ],
+    "2020": [
+      {
+        "word": "bliver",
+        "count": 870
+      },
+      {
+        "word": "sådan",
+        "count": 540
+      },
+      {
+        "word": "måske",
+        "count": 480
+      },
+      {
+        "word": "havde",
+        "count": 475
+      },
+      {
+        "word": "kunne",
+        "count": 426
+      },
+      {
+        "word": "helt",
+        "count": 424
+      },
+      {
+        "word": "skulle",
+        "count": 417
+      },
+      {
+        "word": "nogle",
+        "count": 388
+      },
+      {
+        "word": "tænker",
+        "count": 378
+      },
+      {
+        "word": "ville",
+        "count": 370
+      },
+      {
+        "word": "hele",
+        "count": 321
+      },
+      {
+        "word": "fedt",
+        "count": 320
+      },
+      {
+        "word": "igen",
+        "count": 299
+      },
+      {
+        "word": "ingen",
+        "count": 291
+      },
+      {
+        "word": "nogen",
+        "count": 291
+      }
+    ],
+    "2021": [
+      {
+        "word": "bliver",
+        "count": 830
+      },
+      {
+        "word": "sådan",
+        "count": 580
+      },
+      {
+        "word": "havde",
+        "count": 503
+      },
+      {
+        "word": "skulle",
+        "count": 448
+      },
+      {
+        "word": "helt",
+        "count": 435
+      },
+      {
+        "word": "nogle",
+        "count": 430
+      },
+      {
+        "word": "kunne",
+        "count": 427
+      },
+      {
+        "word": "måske",
+        "count": 407
+      },
+      {
+        "word": "tænker",
+        "count": 403
+      },
+      {
+        "word": "fedt",
+        "count": 378
+      },
+      {
+        "word": "igen",
+        "count": 319
+      },
+      {
+        "word": "shit",
+        "count": 314
+      },
+      {
+        "word": "tager",
+        "count": 301
+      },
+      {
+        "word": "blev",
+        "count": 298
+      },
+      {
+        "word": "været",
+        "count": 295
+      }
+    ],
+    "2022": [
+      {
+        "word": "bliver",
+        "count": 634
+      },
+      {
+        "word": "måske",
+        "count": 401
+      },
+      {
+        "word": "havde",
+        "count": 391
+      },
+      {
+        "word": "tænker",
+        "count": 373
+      },
+      {
+        "word": "sådan",
+        "count": 363
+      },
+      {
+        "word": "nogle",
+        "count": 362
+      },
+      {
+        "word": "fedt",
+        "count": 325
+      },
+      {
+        "word": "skulle",
+        "count": 314
+      },
+      {
+        "word": "helt",
+        "count": 313
+      },
+      {
+        "word": "ville",
+        "count": 281
+      },
+      {
+        "word": "kunne",
+        "count": 281
+      },
+      {
+        "word": "shit",
+        "count": 273
+      },
+      {
+        "word": "blev",
+        "count": 243
+      },
+      {
+        "word": "gang",
+        "count": 241
+      },
+      {
+        "word": "hjem",
+        "count": 239
+      }
+    ],
+    "2023": [
+      {
+        "word": "bliver",
+        "count": 638
+      },
+      {
+        "word": "havde",
+        "count": 441
+      },
+      {
+        "word": "måske",
+        "count": 407
+      },
+      {
+        "word": "sådan",
+        "count": 349
+      },
+      {
+        "word": "helt",
+        "count": 333
+      },
+      {
+        "word": "tænker",
+        "count": 322
+      },
+      {
+        "word": "skulle",
+        "count": 320
+      },
+      {
+        "word": "fedt",
+        "count": 297
+      },
+      {
+        "word": "nogle",
+        "count": 292
+      },
+      {
+        "word": "hele",
+        "count": 291
+      },
+      {
+        "word": "kunne",
+        "count": 288
+      },
+      {
+        "word": "shit",
+        "count": 282
+      },
+      {
+        "word": "tager",
+        "count": 279
+      },
+      {
+        "word": "blev",
+        "count": 267
+      },
+      {
+        "word": "ingen",
+        "count": 266
+      }
+    ],
+    "2024": [
+      {
+        "word": "bliver",
+        "count": 553
+      },
+      {
+        "word": "havde",
+        "count": 362
+      },
+      {
+        "word": "måske",
+        "count": 354
+      },
+      {
+        "word": "skulle",
+        "count": 344
+      },
+      {
+        "word": "redigeret",
+        "count": 340
+      },
+      {
+        "word": "helt",
+        "count": 326
+      },
+      {
+        "word": "kunne",
+        "count": 323
+      },
+      {
+        "word": "sådan",
+        "count": 286
+      },
+      {
+        "word": "tænker",
+        "count": 278
+      },
+      {
+        "word": "nogle",
+        "count": 267
+      },
+      {
+        "word": "shit",
+        "count": 264
+      },
+      {
+        "word": "hele",
+        "count": 254
+      },
+      {
+        "word": "gerne",
+        "count": 231
+      },
+      {
+        "word": "kører",
+        "count": 221
+      },
+      {
+        "word": "fedt",
+        "count": 220
+      }
+    ],
+    "2025": [
+      {
+        "word": "bliver",
+        "count": 483
+      },
+      {
+        "word": "redigeret",
+        "count": 309
+      },
+      {
+        "word": "havde",
+        "count": 305
+      },
+      {
+        "word": "måske",
+        "count": 290
+      },
+      {
+        "word": "skulle",
+        "count": 269
+      },
+      {
+        "word": "sådan",
+        "count": 269
+      },
+      {
+        "word": "kunne",
+        "count": 261
+      },
+      {
+        "word": "nogle",
+        "count": 251
+      },
+      {
+        "word": "helt",
+        "count": 250
+      },
+      {
+        "word": "fedt",
+        "count": 220
+      },
+      {
+        "word": "gerne",
+        "count": 209
+      },
+      {
+        "word": "tænker",
+        "count": 209
+      },
+      {
+        "word": "gang",
+        "count": 195
+      },
+      {
+        "word": "shit",
+        "count": 193
+      },
+      {
+        "word": "blev",
+        "count": 193
+      }
+    ],
+    "2026": [
+      {
+        "word": "bliver",
+        "count": 14
+      },
+      {
+        "word": "lave",
+        "count": 12
+      },
+      {
+        "word": "lørdag",
+        "count": 12
+      },
+      {
+        "word": "tager",
+        "count": 10
+      },
+      {
+        "word": "igen",
+        "count": 10
+      },
+      {
+        "word": "morgen",
+        "count": 9
+      },
+      {
+        "word": "shit",
+        "count": 8
+      },
+      {
+        "word": "måske",
+        "count": 8
+      },
+      {
+        "word": "skulle",
+        "count": 8
+      },
+      {
+        "word": "kunne",
+        "count": 8
+      },
+      {
+        "word": "fredag",
+        "count": 8
+      },
+      {
+        "word": "frokost",
+        "count": 8
+      },
+      {
+        "word": "tænker",
+        "count": 7
+      },
+      {
+        "word": "redigeret",
+        "count": 7
+      },
+      {
+        "word": "ingen",
+        "count": 7
+      }
+    ]
+  },
   "bromance": {
     "pair": [
       "Rob",

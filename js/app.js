@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderRelationships();
     renderGifKing();
     renderStakkelsFar();
+    renderReplySpeed();
+    renderGhostDetector();
+    renderTopicTrends();
 });
 
 // Slide-in Menu
@@ -345,6 +348,80 @@ function renderStakkelsFar() {
                 <div class="stakkels-mention-meta">
                     <span style="color: ${color}">— ${m.sender}</span>
                     <span>${m.date}</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Reply Speed Page
+function renderReplySpeed() {
+    const container = document.getElementById('replyspeed-list');
+    const sorted = Object.entries(DATA.replySpeed)
+        .sort((a, b) => a[1].avgSeconds - b[1].avgSeconds);
+
+    container.innerHTML = sorted.map(([name, data], index) => {
+        const maxTime = sorted[sorted.length - 1][1].avgSeconds;
+        const barWidth = (data.avgSeconds / maxTime) * 100;
+        return `
+            <div class="replyspeed-card">
+                <div class="replyspeed-header">
+                    <div>
+                        <span class="replyspeed-rank">#${index + 1}</span>
+                        <span class="replyspeed-name" style="color: ${data.color}">${name}</span>
+                    </div>
+                    <span class="replyspeed-time">${data.avgDisplay}</span>
+                </div>
+                <div class="replyspeed-bar">
+                    <div class="replyspeed-bar-fill" style="width: ${barWidth}%; background: ${data.color}"></div>
+                </div>
+                <div class="replyspeed-meta">${formatNumber(data.totalReplies)} svar målt</div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Ghost Detector Page
+function renderGhostDetector() {
+    const container = document.getElementById('ghost-list');
+    const sorted = Object.entries(DATA.ghostDetector)
+        .sort((a, b) => b[1].longestGhost - a[1].longestGhost);
+
+    container.innerHTML = sorted.map(([name, data], index) => `
+        <div class="ghost-card">
+            <div class="ghost-header">
+                <div>
+                    <span class="ghost-rank">#${index + 1}</span>
+                    <span class="ghost-name" style="color: ${data.color}">${name}</span>
+                </div>
+                <span class="ghost-days">${data.longestGhost} dage</span>
+            </div>
+            <div class="ghost-details">
+                <span>Længste fravær: ${data.longestStart} - ${data.longestEnd}</span>
+            </div>
+            <div class="ghost-meta">Forsvundet ${data.totalGhosts} gange (7+ dage)</div>
+        </div>
+    `).join('');
+}
+
+// Topic Trends Page
+function renderTopicTrends() {
+    const container = document.getElementById('topics-container');
+    const years = Object.keys(DATA.topicTrends).sort((a, b) => b - a);
+
+    container.innerHTML = years.map(year => {
+        const topics = DATA.topicTrends[year];
+        if (!topics || topics.length === 0) return '';
+        const maxCount = topics[0].count;
+        return `
+            <div class="topics-year">
+                <div class="topics-year-badge">${year}</div>
+                <div class="topics-words">
+                    ${topics.map(t => {
+                        const size = 0.7 + (t.count / maxCount) * 0.6;
+                        const opacity = 0.5 + (t.count / maxCount) * 0.5;
+                        return `<span class="topic-word" style="font-size: ${size}rem; opacity: ${opacity}">${t.word}</span>`;
+                    }).join('')}
                 </div>
             </div>
         `;

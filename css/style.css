@@ -405,6 +405,34 @@ body {
 .relationship-web .node-label { font-size: 10px; fill: white; pointer-events: none; }
 .relationship-web .link { stroke-opacity: 0.6; }
 
+/* Reply Speed */
+.replyspeed-list { display: flex; flex-direction: column; gap: 16px; }
+.replyspeed-card { background: var(--bg-card); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.replyspeed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.replyspeed-rank { font-size: 1.5rem; font-weight: 700; opacity: 0.5; margin-right: 8px; }
+.replyspeed-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; }
+.replyspeed-time { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.replyspeed-bar { height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+.replyspeed-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+.replyspeed-meta { font-size: 0.8rem; color: var(--text-secondary); }
+
+/* Ghost Detector */
+.ghost-list { display: flex; flex-direction: column; gap: 16px; }
+.ghost-card { background: var(--bg-card); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.ghost-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.ghost-rank { font-size: 1.5rem; font-weight: 700; opacity: 0.5; margin-right: 8px; }
+.ghost-name { font-family: 'Space Grotesk', sans-serif; font-size: 1.25rem; font-weight: 700; }
+.ghost-days { font-size: 1.1rem; font-weight: 700; color: var(--accent-pink); }
+.ghost-details { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 4px; }
+.ghost-meta { font-size: 0.8rem; color: var(--text-secondary); opacity: 0.7; }
+
+/* Topic Trends */
+.topics-container { display: flex; flex-direction: column; gap: 24px; }
+.topics-year { background: var(--bg-card); border-radius: 16px; padding: 16px; border: 1px solid rgba(255, 255, 255, 0.08); }
+.topics-year-badge { display: inline-block; background: linear-gradient(135deg, var(--accent), #0f766e); color: var(--bg-primary); font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 700; padding: 6px 16px; border-radius: 10px; margin-bottom: 12px; }
+.topics-words { display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-word { padding: 6px 12px; background: rgba(255, 255, 255, 0.08); border-radius: 16px; color: var(--accent); }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
