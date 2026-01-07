@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderGhostDetector();
     renderTopicTrends();
     renderMood();
+    renderPersonality();
 });
 
 // Slide-in Menu
@@ -560,4 +561,187 @@ function renderMood() {
             `;
         }).join('');
     }
+}
+
+// Personality Page
+function renderPersonality() {
+    const container = document.getElementById('personality-cards');
+    if (!container) return;
+
+    // Calculate personality profiles from existing data
+    const profiles = calculatePersonalityProfiles();
+
+    container.innerHTML = profiles.map(profile => `
+        <div class="personality-card" style="border-color: ${profile.color}30">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: ${profile.color}"></div>
+            <div class="personality-header">
+                <div class="personality-avatar" style="background: ${profile.color}20">
+                    ${profile.emoji}
+                </div>
+                <div class="personality-info">
+                    <div class="personality-name" style="color: ${profile.color}">${profile.name}</div>
+                    <div class="personality-type" style="color: ${profile.color}">${profile.type}</div>
+                </div>
+            </div>
+            <div class="personality-tagline">"${profile.tagline}"</div>
+            <div class="personality-traits">
+                ${profile.traits.map(trait => `
+                    <div class="personality-trait">
+                        <div class="personality-trait-header">
+                            <span class="personality-trait-label">${trait.label}</span>
+                            <span class="personality-trait-value" style="color: ${profile.color}">${trait.valueLabel}</span>
+                        </div>
+                        <div class="personality-trait-bar">
+                            <div class="personality-trait-fill" style="width: ${trait.percent}%; background: ${profile.color}"></div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+            <div class="personality-badges">
+                ${profile.badges.map(badge => `
+                    <span class="personality-badge">
+                        <span class="personality-badge-icon">${badge.icon}</span>
+                        ${badge.label}
+                    </span>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+function calculatePersonalityProfiles() {
+    const members = DATA.meta.members;
+    const profiles = [];
+
+    // Calculate ranges for normalization
+    const allMessages = members.map(m => DATA.members[m]?.messages || 0);
+    const maxMessages = Math.max(...allMessages);
+
+    const allWords = members.map(m => DATA.members[m]?.words || 0);
+    const allMsgs = members.map(m => DATA.members[m]?.messages || 1);
+    const avgWordLengths = members.map((m, i) => allWords[i] / allMsgs[i]);
+    const maxAvgWords = Math.max(...avgWordLengths);
+
+    const allEmojis = members.map(m => DATA.members[m]?.emojis || 0);
+    const emojiRatios = members.map((m, i) => allEmojis[i] / allMsgs[i]);
+    const maxEmojiRatio = Math.max(...emojiRatios);
+
+    const allReplySeconds = members.map(m => DATA.replySpeed?.[m]?.avgSeconds || 600);
+    const minReply = Math.min(...allReplySeconds);
+    const maxReply = Math.max(...allReplySeconds);
+
+    // Personality type definitions with archetypes
+    const archetypes = [
+        { type: 'Fyrværkeriet', emoji: '🎆', tagline: 'Altid klar med en besked og et grin', traits: ['social', 'expressive', 'fast'] },
+        { type: 'Filosoffen', emoji: '🤔', tagline: 'Tænker før der tales, kvalitet over kvantitet', traits: ['thoughtful', 'verbose', 'calm'] },
+        { type: 'Hygge-Mesteren', emoji: '🛋️', tagline: 'Holder gruppen sammen med god stemning', traits: ['positive', 'consistent', 'social'] },
+        { type: 'Natteravnen', emoji: '🦉', tagline: 'De bedste samtaler sker efter midnat', traits: ['nightowl', 'expressive'] },
+        { type: 'Spøgfulden', emoji: '👻', tagline: 'Dukker op når du mindst venter det', traits: ['ghost', 'burst'] },
+        { type: 'Diplomaten', emoji: '⚖️', tagline: 'Altid balanceret, aldrig for meget drama', traits: ['balanced', 'consistent'] },
+        { type: 'Mediekongen', emoji: '📸', tagline: 'Et billede siger mere end tusind ord', traits: ['visual', 'media'] },
+        { type: 'Energibomben', emoji: '⚡', tagline: 'Hurtig på aftrækkeren, altid engageret', traits: ['fast', 'social', 'expressive'] },
+        { type: 'Poeten', emoji: '✍️', tagline: 'Ordene flyder som en stille å', traits: ['verbose', 'thoughtful'] },
+        { type: 'Solstrålen', emoji: '☀️', tagline: 'Bringer lys og positivitet overalt', traits: ['positive', 'expressive'] }
+    ];
+
+    for (const name of members) {
+        const member = DATA.members[name];
+        if (!member) continue;
+
+        const sentiment = SENTIMENT?.byPerson?.[name];
+        const replyData = DATA.replySpeed?.[name];
+        const ghostData = DATA.ghostDetector?.[name];
+
+        // Calculate normalized scores (0-100)
+        const socialScore = (member.messages / maxMessages) * 100;
+        const wordsPerMsg = member.words / member.messages;
+        const verboseScore = (wordsPerMsg / maxAvgWords) * 100;
+        const emojiRatio = member.emojis / member.messages;
+        const expressiveScore = (emojiRatio / maxEmojiRatio) * 100;
+        const replySpeed = replyData?.avgSeconds || 600;
+        const speedScore = 100 - ((replySpeed - minReply) / (maxReply - minReply)) * 100;
+        const moodScore = sentiment ? ((sentiment.score + 25) / 50) * 100 : 50; // Normalize -25 to +25 => 0-100
+        const nightScore = ((member.lateNight || 0) / member.messages) * 1000;
+        const mediaRatio = (member.media / member.messages) * 100;
+        const ghostScore = ghostData?.longestGhost || 0;
+
+        // Determine primary archetype based on dominant traits
+        let bestArchetype = archetypes[5]; // Default to Diplomaten
+        let bestScore = 0;
+
+        for (const arch of archetypes) {
+            let score = 0;
+            if (arch.traits.includes('social') && socialScore > 60) score += socialScore;
+            if (arch.traits.includes('expressive') && expressiveScore > 50) score += expressiveScore;
+            if (arch.traits.includes('fast') && speedScore > 70) score += speedScore;
+            if (arch.traits.includes('verbose') && verboseScore > 60) score += verboseScore;
+            if (arch.traits.includes('thoughtful') && verboseScore > 50 && socialScore < 60) score += 50;
+            if (arch.traits.includes('positive') && moodScore > 65) score += moodScore;
+            if (arch.traits.includes('nightowl') && nightScore > 3) score += nightScore * 20;
+            if (arch.traits.includes('ghost') && ghostScore > 7) score += ghostScore * 5;
+            if (arch.traits.includes('visual') && mediaRatio > 12) score += mediaRatio * 3;
+            if (arch.traits.includes('balanced') && moodScore > 40 && moodScore < 60) score += 60;
+            if (arch.traits.includes('consistent') && !ghostData?.longestGhost) score += 40;
+            if (arch.traits.includes('calm') && speedScore < 50) score += 30;
+            if (arch.traits.includes('burst') && socialScore < 50 && ghostScore > 5) score += 50;
+            if (arch.traits.includes('media') && mediaRatio > 10) score += mediaRatio * 5;
+
+            if (score > bestScore) {
+                bestScore = score;
+                bestArchetype = arch;
+            }
+        }
+
+        // Generate personalized tagline based on actual data
+        let tagline = bestArchetype.tagline;
+        if (bestArchetype.type === 'Fyrværkeriet' && member.messages > 40000) {
+            tagline = `${formatNumber(member.messages)} beskeder kan ikke tage fejl`;
+        } else if (bestArchetype.type === 'Solstrålen' && sentiment?.score > 20) {
+            tagline = `+${sentiment.score}% positivitet - gruppens lyspunkt`;
+        } else if (bestArchetype.type === 'Natteravnen' && member.lateNight > 200) {
+            tagline = `${member.lateNight} beskeder sendt efter midnat`;
+        } else if (bestArchetype.type === 'Mediekongen' && member.media > 5000) {
+            tagline = `${formatNumber(member.media)} billeder og videoer delt`;
+        }
+
+        // Build traits array for display
+        const traits = [
+            { label: 'Social Energi', percent: Math.min(100, socialScore), valueLabel: socialScore > 70 ? 'Ekstrovert' : socialScore > 40 ? 'Balanceret' : 'Introvert' },
+            { label: 'Udtryksform', percent: Math.min(100, expressiveScore), valueLabel: expressiveScore > 60 ? 'Ekspressiv' : expressiveScore > 30 ? 'Moderat' : 'Reserveret' },
+            { label: 'Svarhastighed', percent: Math.min(100, speedScore), valueLabel: replyData?.avgDisplay || 'Ukendt' },
+            { label: 'Humør', percent: Math.min(100, Math.max(0, moodScore)), valueLabel: moodScore > 65 ? 'Positiv' : moodScore > 45 ? 'Neutral' : 'Seriøs' }
+        ];
+
+        // Build badges
+        const badges = [];
+        if (member.questions > 2000) badges.push({ icon: '❓', label: 'Spørgelansen' });
+        if (member.laughs > 1000) badges.push({ icon: '😂', label: 'Griner mest' });
+        if (member.lateNight > 200) badges.push({ icon: '🌙', label: 'Nataktiv' });
+        if (member.earlyMorning > 200) badges.push({ icon: '🌅', label: 'Tidlig fugl' });
+        if (member.media > 2000) badges.push({ icon: '📷', label: 'Billedkunstner' });
+        if (member.gifs > 200) badges.push({ icon: '🎬', label: 'GIF-mester' });
+        if (speedScore > 80) badges.push({ icon: '⚡', label: 'Lynsvarer' });
+        if (ghostData?.longestGhost > 14) badges.push({ icon: '👻', label: 'Spøgelse' });
+        if (sentiment?.score > 15) badges.push({ icon: '☀️', label: 'Solskin' });
+        if (sentiment?.score < -3) badges.push({ icon: '🌧️', label: 'Realist' });
+        if (member.swears > 800) badges.push({ icon: '🤬', label: 'Bandeansen' });
+
+        // Limit badges to 4 most relevant
+        const limitedBadges = badges.slice(0, 4);
+
+        profiles.push({
+            name,
+            color: member.color,
+            type: bestArchetype.type,
+            emoji: bestArchetype.emoji,
+            tagline,
+            traits,
+            badges: limitedBadges
+        });
+    }
+
+    // Sort by message count (most active first)
+    profiles.sort((a, b) => DATA.members[b.name].messages - DATA.members[a.name].messages);
+
+    return profiles;
 }
