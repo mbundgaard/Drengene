@@ -6,6 +6,7 @@
 }
 
 :root {
+    color-scheme: dark;
     --bg-primary: #1a1a2e;
     --bg-secondary: #16213e;
     --bg-card: rgba(255, 255, 255, 0.05);
@@ -21,10 +22,13 @@
 html {
     font-size: 16px;
     -webkit-tap-highlight-color: transparent;
+    background-color: #1a1a2e;
+    color-scheme: dark;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #1a1a2e;
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     background-attachment: fixed;
     color: var(--text-primary);
