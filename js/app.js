@@ -357,12 +357,16 @@ function renderStakkelsFar() {
 // Reply Speed Page
 function renderReplySpeed() {
     const container = document.getElementById('replyspeed-list');
+    if (!DATA.replySpeed || Object.keys(DATA.replySpeed).length === 0) {
+        container.innerHTML = '<p class="empty-state">Ingen data</p>';
+        return;
+    }
     const sorted = Object.entries(DATA.replySpeed)
         .sort((a, b) => a[1].avgSeconds - b[1].avgSeconds);
 
+    const maxTime = sorted.length > 0 ? sorted[sorted.length - 1][1].avgSeconds : 1;
     container.innerHTML = sorted.map(([name, data], index) => {
-        const maxTime = sorted[sorted.length - 1][1].avgSeconds;
-        const barWidth = (data.avgSeconds / maxTime) * 100;
+        const barWidth = maxTime > 0 ? (data.avgSeconds / maxTime) * 100 : 0;
         return `
             <div class="replyspeed-card">
                 <div class="replyspeed-header">
@@ -384,6 +388,10 @@ function renderReplySpeed() {
 // Ghost Detector Page
 function renderGhostDetector() {
     const container = document.getElementById('ghost-list');
+    if (!DATA.ghostDetector || Object.keys(DATA.ghostDetector).length === 0) {
+        container.innerHTML = '<p class="empty-state">Ingen data</p>';
+        return;
+    }
     const sorted = Object.entries(DATA.ghostDetector)
         .sort((a, b) => b[1].longestGhost - a[1].longestGhost);
 
@@ -407,6 +415,10 @@ function renderGhostDetector() {
 // Topic Trends Page
 function renderTopicTrends() {
     const container = document.getElementById('topics-container');
+    if (!DATA.topicTrends || Object.keys(DATA.topicTrends).length === 0) {
+        container.innerHTML = '<p class="empty-state">Ingen data</p>';
+        return;
+    }
     const years = Object.keys(DATA.topicTrends).sort((a, b) => b - a);
 
     container.innerHTML = years.map(year => {
