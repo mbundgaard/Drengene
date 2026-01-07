@@ -1656,24 +1656,9 @@ const DATA = {
         "size": 2.2
       },
       {
-        "word": "sådan",
-        "count": 1084,
-        "size": 1.81
-      },
-      {
         "word": "havde",
         "count": 946,
         "size": 1.68
-      },
-      {
-        "word": "skulle",
-        "count": 765,
-        "size": 1.51
-      },
-      {
-        "word": "nogle",
-        "count": 753,
-        "size": 1.5
       },
       {
         "word": "ind",
@@ -1681,29 +1666,9 @@ const DATA = {
         "size": 1.5
       },
       {
-        "word": "måske",
-        "count": 724,
-        "size": 1.47
-      },
-      {
-        "word": "tænker",
-        "count": 716,
-        "size": 1.47
-      },
-      {
-        "word": "ser",
-        "count": 690,
-        "size": 1.44
-      },
-      {
         "word": "alt",
         "count": 666,
         "size": 1.42
-      },
-      {
-        "word": "ville",
-        "count": 653,
-        "size": 1.41
       },
       {
         "word": "hele",
@@ -1711,19 +1676,9 @@ const DATA = {
         "size": 1.4
       },
       {
-        "word": "helt",
-        "count": 632,
-        "size": 1.39
-      },
-      {
         "word": "kun",
         "count": 611,
         "size": 1.37
-      },
-      {
-        "word": "kunne",
-        "count": 580,
-        "size": 1.34
       },
       {
         "word": "ingen",
@@ -1756,16 +1711,6 @@ const DATA = {
         "size": 1.31
       },
       {
-        "word": "igen",
-        "count": 539,
-        "size": 1.3
-      },
-      {
-        "word": "tager",
-        "count": 537,
-        "size": 1.3
-      },
-      {
         "word": "sidder",
         "count": 536,
         "size": 1.3
@@ -1776,29 +1721,84 @@ const DATA = {
         "size": 1.29
       },
       {
-        "word": "fik",
-        "count": 516,
-        "size": 1.28
-      },
-      {
-        "word": "dag",
-        "count": 512,
-        "size": 1.28
-      },
-      {
         "word": "gerne",
         "count": 512,
-        "size": 1.28
-      },
-      {
-        "word": "altså",
-        "count": 511,
         "size": 1.28
       },
       {
         "word": "satme",
         "count": 503,
         "size": 1.27
+      },
+      {
+        "word": "ned",
+        "count": 494,
+        "size": 1.26
+      },
+      {
+        "word": "hjem",
+        "count": 488,
+        "size": 1.25
+      },
+      {
+        "word": "hvordan",
+        "count": 473,
+        "size": 1.24
+      },
+      {
+        "word": "mand",
+        "count": 450,
+        "size": 1.22
+      },
+      {
+        "word": "imorgen",
+        "count": 449,
+        "size": 1.22
+      },
+      {
+        "word": "redigeret",
+        "count": 440,
+        "size": 1.21
+      },
+      {
+        "word": "een",
+        "count": 437,
+        "size": 1.21
+      },
+      {
+        "word": "fedt",
+        "count": 407,
+        "size": 1.18
+      },
+      {
+        "word": "dage",
+        "count": 401,
+        "size": 1.17
+      },
+      {
+        "word": "mange",
+        "count": 393,
+        "size": 1.17
+      },
+      {
+        "word": "komme",
+        "count": 390,
+        "size": 1.16
+      },
+      {
+        "word": "nåmen",
+        "count": 384,
+        "size": 1.16
+      },
+      {
+        "word": "yes",
+        "count": 379,
+        "size": 1.15
+      },
+      {
+        "word": "kom",
+        "count": 363,
+        "size": 1.14
       }
     ],
     "Nizzle 3000": [
@@ -1813,44 +1813,9 @@ const DATA = {
         "size": 1.73
       },
       {
-        "word": "skulle",
-        "count": 439,
-        "size": 1.7
-      },
-      {
-        "word": "måske",
-        "count": 425,
-        "size": 1.67
-      },
-      {
-        "word": "helt",
-        "count": 414,
-        "size": 1.65
-      },
-      {
-        "word": "sådan",
-        "count": 399,
-        "size": 1.62
-      },
-      {
-        "word": "kunne",
-        "count": 383,
-        "size": 1.59
-      },
-      {
         "word": "havde",
         "count": 380,
         "size": 1.58
-      },
-      {
-        "word": "dag",
-        "count": 356,
-        "size": 1.53
-      },
-      {
-        "word": "nogle",
-        "count": 345,
-        "size": 1.51
       },
       {
         "word": "ind",
@@ -1858,34 +1823,14 @@ const DATA = {
         "size": 1.51
       },
       {
-        "word": "ser",
-        "count": 286,
-        "size": 1.39
-      },
-      {
         "word": "hjem",
         "count": 284,
         "size": 1.38
       },
       {
-        "word": "fik",
-        "count": 278,
-        "size": 1.37
-      },
-      {
         "word": "hele",
         "count": 274,
         "size": 1.36
-      },
-      {
-        "word": "gang",
-        "count": 269,
-        "size": 1.35
-      },
-      {
-        "word": "morgen",
-        "count": 261,
-        "size": 1.34
       },
       {
         "word": "vel",
@@ -1898,28 +1843,8 @@ const DATA = {
         "size": 1.31
       },
       {
-        "word": "været",
-        "count": 246,
-        "size": 1.3
-      },
-      {
         "word": "alt",
         "count": 246,
-        "size": 1.3
-      },
-      {
-        "word": "aften",
-        "count": 244,
-        "size": 1.3
-      },
-      {
-        "word": "tager",
-        "count": 243,
-        "size": 1.3
-      },
-      {
-        "word": "tænker",
-        "count": 243,
         "size": 1.3
       },
       {
@@ -1938,171 +1863,246 @@ const DATA = {
         "size": 1.28
       },
       {
-        "word": "fordi",
-        "count": 234,
-        "size": 1.28
-      },
-      {
-        "word": "tid",
-        "count": 233,
-        "size": 1.28
-      },
-      {
         "word": "shit",
         "count": 233,
         "size": 1.28
+      },
+      {
+        "word": "par",
+        "count": 222,
+        "size": 1.26
+      },
+      {
+        "word": "kører",
+        "count": 221,
+        "size": 1.25
+      },
+      {
+        "word": "god",
+        "count": 217,
+        "size": 1.25
+      },
+      {
+        "word": "ned",
+        "count": 215,
+        "size": 1.24
+      },
+      {
+        "word": "lille",
+        "count": 214,
+        "size": 1.24
+      },
+      {
+        "word": "komme",
+        "count": 212,
+        "size": 1.24
+      },
+      {
+        "word": "nogen",
+        "count": 203,
+        "size": 1.22
+      },
+      {
+        "word": "mange",
+        "count": 200,
+        "size": 1.21
+      },
+      {
+        "word": "fået",
+        "count": 194,
+        "size": 1.2
+      },
+      {
+        "word": "arbejde",
+        "count": 193,
+        "size": 1.2
+      },
+      {
+        "word": "stadig",
+        "count": 193,
+        "size": 1.2
+      },
+      {
+        "word": "satme",
+        "count": 180,
+        "size": 1.17
+      },
+      {
+        "word": "står",
+        "count": 179,
+        "size": 1.17
+      },
+      {
+        "word": "køre",
+        "count": 178,
+        "size": 1.17
+      },
+      {
+        "word": "sikkert",
+        "count": 168,
+        "size": 1.14
+      },
+      {
+        "word": "først",
+        "count": 164,
+        "size": 1.14
+      },
+      {
+        "word": "ellers",
+        "count": 164,
+        "size": 1.14
       }
     ],
     "Low": [
       {
-        "word": "dag",
-        "count": 320,
-        "size": 2.2
-      },
-      {
         "word": "bliver",
         "count": 315,
-        "size": 2.18
+        "size": 2.2
       },
       {
         "word": "god",
         "count": 245,
-        "size": 1.87
-      },
-      {
-        "word": "skulle",
-        "count": 235,
-        "size": 1.83
-      },
-      {
-        "word": "kunne",
-        "count": 231,
-        "size": 1.81
+        "size": 1.89
       },
       {
         "word": "shit",
         "count": 226,
-        "size": 1.79
-      },
-      {
-        "word": "nogle",
-        "count": 224,
-        "size": 1.78
-      },
-      {
-        "word": "tak",
-        "count": 214,
-        "size": 1.74
+        "size": 1.8
       },
       {
         "word": "fedt",
         "count": 212,
-        "size": 1.73
+        "size": 1.74
       },
       {
         "word": "havde",
         "count": 208,
-        "size": 1.71
-      },
-      {
-        "word": "måske",
-        "count": 207,
-        "size": 1.71
-      },
-      {
-        "word": "helt",
-        "count": 203,
-        "size": 1.69
-      },
-      {
-        "word": "ser",
-        "count": 198,
-        "size": 1.67
-      },
-      {
-        "word": "fik",
-        "count": 195,
-        "size": 1.65
-      },
-      {
-        "word": "sådan",
-        "count": 194,
-        "size": 1.65
-      },
-      {
-        "word": "hehe",
-        "count": 190,
-        "size": 1.63
-      },
-      {
-        "word": "tænker",
-        "count": 190,
-        "size": 1.63
+        "size": 1.72
       },
       {
         "word": "gerne",
         "count": 172,
-        "size": 1.55
+        "size": 1.56
       },
       {
         "word": "alt",
         "count": 166,
-        "size": 1.53
+        "size": 1.54
       },
       {
         "word": "mand",
         "count": 164,
-        "size": 1.52
+        "size": 1.53
       },
       {
         "word": "whisky",
         "count": 161,
-        "size": 1.5
+        "size": 1.52
       },
       {
         "word": "blev",
         "count": 157,
-        "size": 1.49
+        "size": 1.5
       },
       {
         "word": "ind",
         "count": 155,
-        "size": 1.48
+        "size": 1.49
       },
       {
         "word": "ingen",
         "count": 145,
-        "size": 1.43
-      },
-      {
-        "word": "ville",
-        "count": 144,
-        "size": 1.43
-      },
-      {
-        "word": "gang",
-        "count": 135,
-        "size": 1.39
+        "size": 1.44
       },
       {
         "word": "nåh",
         "count": 134,
-        "size": 1.39
+        "size": 1.4
       },
       {
         "word": "vel",
         "count": 131,
-        "size": 1.37
+        "size": 1.38
       },
       {
         "word": "fint",
         "count": 129,
-        "size": 1.36
+        "size": 1.37
       },
       {
         "word": "lækkert",
         "count": 117,
+        "size": 1.32
+      },
+      {
+        "word": "kom",
+        "count": 117,
+        "size": 1.32
+      },
+      {
+        "word": "kun",
+        "count": 114,
         "size": 1.31
+      },
+      {
+        "word": "fandme",
+        "count": 114,
+        "size": 1.31
+      },
+      {
+        "word": "står",
+        "count": 105,
+        "size": 1.27
+      },
+      {
+        "word": "yes",
+        "count": 99,
+        "size": 1.24
+      },
+      {
+        "word": "tur",
+        "count": 98,
+        "size": 1.24
+      },
+      {
+        "word": "kører",
+        "count": 97,
+        "size": 1.23
+      },
+      {
+        "word": "par",
+        "count": 96,
+        "size": 1.23
+      },
+      {
+        "word": "ned",
+        "count": 96,
+        "size": 1.23
+      },
+      {
+        "word": "stadig",
+        "count": 94,
+        "size": 1.22
+      },
+      {
+        "word": "uden",
+        "count": 92,
+        "size": 1.21
+      },
+      {
+        "word": "komme",
+        "count": 92,
+        "size": 1.21
+      },
+      {
+        "word": "hjem",
+        "count": 90,
+        "size": 1.2
+      },
+      {
+        "word": "jer",
+        "count": 90,
+        "size": 1.2
       }
     ],
     "Wiz": [
@@ -2112,34 +2112,14 @@ const DATA = {
         "size": 2.2
       },
       {
-        "word": "måske",
-        "count": 280,
-        "size": 1.84
-      },
-      {
         "word": "bliver",
         "count": 249,
         "size": 1.72
       },
       {
-        "word": "ser",
-        "count": 246,
-        "size": 1.71
-      },
-      {
-        "word": "fik",
-        "count": 218,
-        "size": 1.61
-      },
-      {
         "word": "kun",
         "count": 214,
         "size": 1.59
-      },
-      {
-        "word": "kunne",
-        "count": 193,
-        "size": 1.51
       },
       {
         "word": "ingen",
@@ -2150,11 +2130,6 @@ const DATA = {
         "word": "slettet",
         "count": 181,
         "size": 1.47
-      },
-      {
-        "word": "skulle",
-        "count": 179,
-        "size": 1.46
       },
       {
         "word": "ska",
@@ -2182,24 +2157,9 @@ const DATA = {
         "size": 1.37
       },
       {
-        "word": "tænker",
-        "count": 153,
-        "size": 1.37
-      },
-      {
         "word": "god",
         "count": 152,
         "size": 1.36
-      },
-      {
-        "word": "siger",
-        "count": 150,
-        "size": 1.36
-      },
-      {
-        "word": "sådan",
-        "count": 146,
-        "size": 1.34
       },
       {
         "word": "ned",
@@ -2217,11 +2177,6 @@ const DATA = {
         "size": 1.33
       },
       {
-        "word": "set",
-        "count": 143,
-        "size": 1.33
-      },
-      {
         "word": "hjem",
         "count": 142,
         "size": 1.33
@@ -2232,17 +2187,7 @@ const DATA = {
         "size": 1.31
       },
       {
-        "word": "helt",
-        "count": 133,
-        "size": 1.29
-      },
-      {
         "word": "fandme",
-        "count": 132,
-        "size": 1.29
-      },
-      {
-        "word": "tager",
         "count": 132,
         "size": 1.29
       },
@@ -2252,9 +2197,64 @@ const DATA = {
         "size": 1.29
       },
       {
-        "word": "været",
-        "count": 129,
-        "size": 1.28
+        "word": "ellers",
+        "count": 122,
+        "size": 1.25
+      },
+      {
+        "word": "blev",
+        "count": 122,
+        "size": 1.25
+      },
+      {
+        "word": "fedt",
+        "count": 120,
+        "size": 1.24
+      },
+      {
+        "word": "fået",
+        "count": 114,
+        "size": 1.22
+      },
+      {
+        "word": "hellere",
+        "count": 110,
+        "size": 1.21
+      },
+      {
+        "word": "uden",
+        "count": 106,
+        "size": 1.19
+      },
+      {
+        "word": "mange",
+        "count": 105,
+        "size": 1.19
+      },
+      {
+        "word": "job",
+        "count": 105,
+        "size": 1.19
+      },
+      {
+        "word": "inden",
+        "count": 103,
+        "size": 1.18
+      },
+      {
+        "word": "lækkert",
+        "count": 102,
+        "size": 1.18
+      },
+      {
+        "word": "hele",
+        "count": 102,
+        "size": 1.18
+      },
+      {
+        "word": "fin",
+        "count": 102,
+        "size": 1.18
       }
     ],
     "Fyn": [
@@ -2262,11 +2262,6 @@ const DATA = {
         "word": "olsen",
         "count": 381,
         "size": 2.2
-      },
-      {
-        "word": "tænker",
-        "count": 245,
-        "size": 1.7
       },
       {
         "word": "shit",
@@ -2279,29 +2274,9 @@ const DATA = {
         "size": 1.58
       },
       {
-        "word": "dag",
-        "count": 178,
-        "size": 1.45
-      },
-      {
-        "word": "ser",
-        "count": 172,
-        "size": 1.43
-      },
-      {
-        "word": "måske",
-        "count": 169,
-        "size": 1.42
-      },
-      {
         "word": "god",
         "count": 159,
         "size": 1.38
-      },
-      {
-        "word": "helt",
-        "count": 148,
-        "size": 1.34
       },
       {
         "word": "tur",
@@ -2315,11 +2290,6 @@ const DATA = {
       },
       {
         "word": "kører",
-        "count": 135,
-        "size": 1.3
-      },
-      {
-        "word": "aften",
         "count": 135,
         "size": 1.3
       },
@@ -2354,21 +2324,6 @@ const DATA = {
         "size": 1.22
       },
       {
-        "word": "tager",
-        "count": 105,
-        "size": 1.19
-      },
-      {
-        "word": "igen",
-        "count": 102,
-        "size": 1.17
-      },
-      {
-        "word": "tak",
-        "count": 100,
-        "size": 1.17
-      },
-      {
         "word": "niz",
         "count": 100,
         "size": 1.17
@@ -2389,11 +2344,6 @@ const DATA = {
         "size": 1.15
       },
       {
-        "word": "morgen",
-        "count": 95,
-        "size": 1.15
-      },
-      {
         "word": "klar",
         "count": 94,
         "size": 1.15
@@ -2407,6 +2357,56 @@ const DATA = {
         "word": "ind",
         "count": 92,
         "size": 1.14
+      },
+      {
+        "word": "står",
+        "count": 92,
+        "size": 1.14
+      },
+      {
+        "word": "præcis",
+        "count": 92,
+        "size": 1.14
+      },
+      {
+        "word": "hygger",
+        "count": 90,
+        "size": 1.13
+      },
+      {
+        "word": "hjem",
+        "count": 90,
+        "size": 1.13
+      },
+      {
+        "word": "snart",
+        "count": 85,
+        "size": 1.11
+      },
+      {
+        "word": "blev",
+        "count": 84,
+        "size": 1.11
+      },
+      {
+        "word": "stadig",
+        "count": 84,
+        "size": 1.11
+      },
+      {
+        "word": "comp",
+        "count": 84,
+        "size": 1.11
+      },
+      {
+        "word": "dage",
+        "count": 80,
+        "size": 1.09
+      },
+      {
+        "word": "yes",
+        "count": 79,
+        "size": 1.09
       }
     ],
     "Comput": [
@@ -2414,21 +2414,6 @@ const DATA = {
         "word": "bliver",
         "count": 199,
         "size": 2.2
-      },
-      {
-        "word": "tænker",
-        "count": 162,
-        "size": 1.94
-      },
-      {
-        "word": "helt",
-        "count": 158,
-        "size": 1.91
-      },
-      {
-        "word": "dag",
-        "count": 152,
-        "size": 1.87
       },
       {
         "word": "redigeret",
@@ -2441,16 +2426,6 @@ const DATA = {
         "size": 1.85
       },
       {
-        "word": "nogle",
-        "count": 148,
-        "size": 1.84
-      },
-      {
-        "word": "ser",
-        "count": 143,
-        "size": 1.81
-      },
-      {
         "word": "havde",
         "count": 138,
         "size": 1.77
@@ -2461,24 +2436,9 @@ const DATA = {
         "size": 1.75
       },
       {
-        "word": "kunne",
-        "count": 124,
-        "size": 1.67
-      },
-      {
         "word": "nogen",
         "count": 119,
         "size": 1.64
-      },
-      {
-        "word": "måske",
-        "count": 116,
-        "size": 1.62
-      },
-      {
-        "word": "fik",
-        "count": 115,
-        "size": 1.61
       },
       {
         "word": "tjek",
@@ -2486,24 +2446,9 @@ const DATA = {
         "size": 1.59
       },
       {
-        "word": "sådan",
-        "count": 107,
-        "size": 1.55
-      },
-      {
-        "word": "ville",
-        "count": 106,
-        "size": 1.55
-      },
-      {
         "word": "ind",
         "count": 105,
         "size": 1.54
-      },
-      {
-        "word": "gang",
-        "count": 103,
-        "size": 1.52
       },
       {
         "word": "sara",
@@ -2526,24 +2471,9 @@ const DATA = {
         "size": 1.47
       },
       {
-        "word": "igen",
-        "count": 95,
-        "size": 1.47
-      },
-      {
-        "word": "været",
-        "count": 90,
-        "size": 1.43
-      },
-      {
         "word": "stadig",
         "count": 89,
         "size": 1.43
-      },
-      {
-        "word": "skulle",
-        "count": 88,
-        "size": 1.42
       },
       {
         "word": "vel",
@@ -2551,14 +2481,84 @@ const DATA = {
         "size": 1.41
       },
       {
-        "word": "siger",
-        "count": 84,
-        "size": 1.39
-      },
-      {
         "word": "kører",
         "count": 83,
         "size": 1.38
+      },
+      {
+        "word": "nice",
+        "count": 82,
+        "size": 1.38
+      },
+      {
+        "word": "kun",
+        "count": 81,
+        "size": 1.37
+      },
+      {
+        "word": "hjem",
+        "count": 75,
+        "size": 1.33
+      },
+      {
+        "word": "super",
+        "count": 73,
+        "size": 1.31
+      },
+      {
+        "word": "første",
+        "count": 70,
+        "size": 1.29
+      },
+      {
+        "word": "yes",
+        "count": 69,
+        "size": 1.29
+      },
+      {
+        "word": "tur",
+        "count": 67,
+        "size": 1.27
+      },
+      {
+        "word": "done",
+        "count": 67,
+        "size": 1.27
+      },
+      {
+        "word": "fået",
+        "count": 65,
+        "size": 1.26
+      },
+      {
+        "word": "flere",
+        "count": 64,
+        "size": 1.25
+      },
+      {
+        "word": "hvordan",
+        "count": 62,
+        "size": 1.24
+      },
+      {
+        "word": "fed",
+        "count": 61,
+        "size": 1.23
+      },
+      {
+        "word": "jer",
+        "count": 61,
+        "size": 1.23
+      },
+      {
+        "word": "vores",
+        "count": 61,
+        "size": 1.23
+      },
+      {
+        "word": "dage",
+        "count": 61,
+        "size": 1.23
       }
     ],
     "Holst": [
@@ -2573,59 +2573,14 @@ const DATA = {
         "size": 1.87
       },
       {
-        "word": "måske",
-        "count": 218,
-        "size": 1.57
-      },
-      {
-        "word": "nogle",
-        "count": 204,
-        "size": 1.52
-      },
-      {
         "word": "limfjordsporter",
         "count": 198,
         "size": 1.5
       },
       {
-        "word": "dag",
-        "count": 194,
-        "size": 1.49
-      },
-      {
         "word": "god",
         "count": 186,
         "size": 1.46
-      },
-      {
-        "word": "ser",
-        "count": 186,
-        "size": 1.46
-      },
-      {
-        "word": "sådan",
-        "count": 182,
-        "size": 1.45
-      },
-      {
-        "word": "skulle",
-        "count": 178,
-        "size": 1.43
-      },
-      {
-        "word": "kunne",
-        "count": 175,
-        "size": 1.42
-      },
-      {
-        "word": "ville",
-        "count": 163,
-        "size": 1.38
-      },
-      {
-        "word": "hehe",
-        "count": 162,
-        "size": 1.37
       },
       {
         "word": "ind",
@@ -2638,11 +2593,6 @@ const DATA = {
         "size": 1.31
       },
       {
-        "word": "helt",
-        "count": 139,
-        "size": 1.29
-      },
-      {
         "word": "ellers",
         "count": 137,
         "size": 1.29
@@ -2653,24 +2603,9 @@ const DATA = {
         "size": 1.26
       },
       {
-        "word": "gang",
-        "count": 127,
-        "size": 1.25
-      },
-      {
         "word": "kun",
         "count": 126,
         "size": 1.25
-      },
-      {
-        "word": "igen",
-        "count": 124,
-        "size": 1.24
-      },
-      {
-        "word": "tid",
-        "count": 123,
-        "size": 1.24
       },
       {
         "word": "hele",
@@ -2683,17 +2618,7 @@ const DATA = {
         "size": 1.2
       },
       {
-        "word": "altid",
-        "count": 111,
-        "size": 1.19
-      },
-      {
         "word": "bjørn",
-        "count": 110,
-        "size": 1.19
-      },
-      {
-        "word": "andre",
         "count": 110,
         "size": 1.19
       },
@@ -2708,9 +2633,84 @@ const DATA = {
         "size": 1.18
       },
       {
-        "word": "synes",
-        "count": 103,
-        "size": 1.17
+        "word": "tur",
+        "count": 97,
+        "size": 1.14
+      },
+      {
+        "word": "kristina",
+        "count": 93,
+        "size": 1.13
+      },
+      {
+        "word": "hjem",
+        "count": 93,
+        "size": 1.13
+      },
+      {
+        "word": "job",
+        "count": 88,
+        "size": 1.11
+      },
+      {
+        "word": "timer",
+        "count": 86,
+        "size": 1.1
+      },
+      {
+        "word": "gerne",
+        "count": 85,
+        "size": 1.1
+      },
+      {
+        "word": "vel",
+        "count": 83,
+        "size": 1.09
+      },
+      {
+        "word": "blev",
+        "count": 82,
+        "size": 1.09
+      },
+      {
+        "word": "børn",
+        "count": 81,
+        "size": 1.09
+      },
+      {
+        "word": "håber",
+        "count": 80,
+        "size": 1.08
+      },
+      {
+        "word": "sammen",
+        "count": 80,
+        "size": 1.08
+      },
+      {
+        "word": "mon",
+        "count": 79,
+        "size": 1.08
+      },
+      {
+        "word": "ingen",
+        "count": 79,
+        "size": 1.08
+      },
+      {
+        "word": "dage",
+        "count": 79,
+        "size": 1.08
+      },
+      {
+        "word": "dog",
+        "count": 78,
+        "size": 1.08
+      },
+      {
+        "word": "ungerne",
+        "count": 77,
+        "size": 1.07
       }
     ],
     "Lys": [
@@ -2725,16 +2725,6 @@ const DATA = {
         "size": 2.12
       },
       {
-        "word": "hehe",
-        "count": 216,
-        "size": 2.05
-      },
-      {
-        "word": "ser",
-        "count": 210,
-        "size": 2.01
-      },
-      {
         "word": "bliver",
         "count": 189,
         "size": 1.89
@@ -2743,26 +2733,6 @@ const DATA = {
         "word": "shit",
         "count": 157,
         "size": 1.71
-      },
-      {
-        "word": "helt",
-        "count": 146,
-        "size": 1.64
-      },
-      {
-        "word": "dag",
-        "count": 143,
-        "size": 1.63
-      },
-      {
-        "word": "kunne",
-        "count": 133,
-        "size": 1.57
-      },
-      {
-        "word": "sådan",
-        "count": 130,
-        "size": 1.55
       },
       {
         "word": "satme",
@@ -2800,16 +2770,6 @@ const DATA = {
         "size": 1.33
       },
       {
-        "word": "ville",
-        "count": 91,
-        "size": 1.33
-      },
-      {
-        "word": "samme",
-        "count": 89,
-        "size": 1.31
-      },
-      {
         "word": "yes",
         "count": 87,
         "size": 1.3
@@ -2820,29 +2780,9 @@ const DATA = {
         "size": 1.27
       },
       {
-        "word": "gang",
-        "count": 80,
-        "size": 1.26
-      },
-      {
-        "word": "måske",
-        "count": 79,
-        "size": 1.26
-      },
-      {
-        "word": "tak",
-        "count": 78,
-        "size": 1.25
-      },
-      {
         "word": "tillykke",
         "count": 76,
         "size": 1.24
-      },
-      {
-        "word": "skulle",
-        "count": 75,
-        "size": 1.23
       },
       {
         "word": "lyder",
@@ -2860,9 +2800,69 @@ const DATA = {
         "size": 1.23
       },
       {
-        "word": "nogle",
-        "count": 70,
-        "size": 1.2
+        "word": "christine",
+        "count": 67,
+        "size": 1.19
+      },
+      {
+        "word": "dog",
+        "count": 67,
+        "size": 1.19
+      },
+      {
+        "word": "blev",
+        "count": 61,
+        "size": 1.15
+      },
+      {
+        "word": "kører",
+        "count": 61,
+        "size": 1.15
+      },
+      {
+        "word": "mange",
+        "count": 60,
+        "size": 1.15
+      },
+      {
+        "word": "sikkert",
+        "count": 60,
+        "size": 1.15
+      },
+      {
+        "word": "uhh",
+        "count": 59,
+        "size": 1.14
+      },
+      {
+        "word": "ind",
+        "count": 59,
+        "size": 1.14
+      },
+      {
+        "word": "hver",
+        "count": 56,
+        "size": 1.12
+      },
+      {
+        "word": "tur",
+        "count": 56,
+        "size": 1.12
+      },
+      {
+        "word": "ellers",
+        "count": 53,
+        "size": 1.11
+      },
+      {
+        "word": "ingen",
+        "count": 53,
+        "size": 1.11
+      },
+      {
+        "word": "først",
+        "count": 52,
+        "size": 1.1
       }
     ],
     "Døring": [
@@ -2870,16 +2870,6 @@ const DATA = {
         "word": "bliver",
         "count": 218,
         "size": 2.2
-      },
-      {
-        "word": "dag",
-        "count": 217,
-        "size": 2.19
-      },
-      {
-        "word": "kunne",
-        "count": 137,
-        "size": 1.68
       },
       {
         "word": "god",
@@ -2892,44 +2882,14 @@ const DATA = {
         "size": 1.62
       },
       {
-        "word": "måske",
-        "count": 121,
-        "size": 1.58
-      },
-      {
-        "word": "ser",
-        "count": 119,
-        "size": 1.56
-      },
-      {
         "word": "blev",
         "count": 109,
         "size": 1.5
       },
       {
-        "word": "skulle",
-        "count": 107,
-        "size": 1.49
-      },
-      {
-        "word": "tak",
-        "count": 106,
-        "size": 1.48
-      },
-      {
         "word": "gerne",
         "count": 103,
         "size": 1.46
-      },
-      {
-        "word": "sådan",
-        "count": 99,
-        "size": 1.44
-      },
-      {
-        "word": "nogle",
-        "count": 99,
-        "size": 1.44
       },
       {
         "word": "ind",
@@ -2942,29 +2902,9 @@ const DATA = {
         "size": 1.43
       },
       {
-        "word": "været",
-        "count": 95,
-        "size": 1.41
-      },
-      {
-        "word": "helt",
-        "count": 95,
-        "size": 1.41
-      },
-      {
         "word": "jane",
         "count": 88,
         "size": 1.37
-      },
-      {
-        "word": "ville",
-        "count": 86,
-        "size": 1.35
-      },
-      {
-        "word": "tid",
-        "count": 85,
-        "size": 1.35
       },
       {
         "word": "nogen",
@@ -2972,23 +2912,8 @@ const DATA = {
         "size": 1.33
       },
       {
-        "word": "gang",
-        "count": 81,
-        "size": 1.32
-      },
-      {
         "word": "står",
         "count": 80,
-        "size": 1.31
-      },
-      {
-        "word": "fik",
-        "count": 80,
-        "size": 1.31
-      },
-      {
-        "word": "morgen",
-        "count": 79,
         "size": 1.31
       },
       {
@@ -3012,9 +2937,84 @@ const DATA = {
         "size": 1.27
       },
       {
-        "word": "tænker",
-        "count": 73,
-        "size": 1.27
+        "word": "først",
+        "count": 70,
+        "size": 1.25
+      },
+      {
+        "word": "fri",
+        "count": 69,
+        "size": 1.24
+      },
+      {
+        "word": "ingen",
+        "count": 68,
+        "size": 1.24
+      },
+      {
+        "word": "kører",
+        "count": 67,
+        "size": 1.23
+      },
+      {
+        "word": "minutter",
+        "count": 65,
+        "size": 1.22
+      },
+      {
+        "word": "timer",
+        "count": 64,
+        "size": 1.21
+      },
+      {
+        "word": "vores",
+        "count": 63,
+        "size": 1.2
+      },
+      {
+        "word": "fint",
+        "count": 62,
+        "size": 1.2
+      },
+      {
+        "word": "deres",
+        "count": 62,
+        "size": 1.2
+      },
+      {
+        "word": "holger",
+        "count": 62,
+        "size": 1.2
+      },
+      {
+        "word": "ned",
+        "count": 60,
+        "size": 1.19
+      },
+      {
+        "word": "flere",
+        "count": 58,
+        "size": 1.17
+      },
+      {
+        "word": "sidste",
+        "count": 58,
+        "size": 1.17
+      },
+      {
+        "word": "mange",
+        "count": 56,
+        "size": 1.16
+      },
+      {
+        "word": "hjem",
+        "count": 55,
+        "size": 1.15
+      },
+      {
+        "word": "første",
+        "count": 51,
+        "size": 1.13
       }
     ],
     "Zami": [
@@ -3027,11 +3027,6 @@ const DATA = {
         "word": "fedt",
         "count": 127,
         "size": 1.92
-      },
-      {
-        "word": "tænker",
-        "count": 117,
-        "size": 1.83
       },
       {
         "word": "god",
@@ -3054,16 +3049,6 @@ const DATA = {
         "size": 1.55
       },
       {
-        "word": "nogle",
-        "count": 77,
-        "size": 1.48
-      },
-      {
-        "word": "dag",
-        "count": 76,
-        "size": 1.47
-      },
-      {
         "word": "nizzel",
         "count": 75,
         "size": 1.46
@@ -3072,11 +3057,6 @@ const DATA = {
         "word": "hjemme",
         "count": 74,
         "size": 1.45
-      },
-      {
-        "word": "andre",
-        "count": 73,
-        "size": 1.44
       },
       {
         "word": "nice",
@@ -3089,29 +3069,9 @@ const DATA = {
         "size": 1.43
       },
       {
-        "word": "helt",
-        "count": 71,
-        "size": 1.43
-      },
-      {
-        "word": "ser",
-        "count": 68,
-        "size": 1.4
-      },
-      {
         "word": "super",
         "count": 68,
         "size": 1.4
-      },
-      {
-        "word": "måske",
-        "count": 66,
-        "size": 1.38
-      },
-      {
-        "word": "tager",
-        "count": 66,
-        "size": 1.38
       },
       {
         "word": "alt",
@@ -3134,27 +3094,12 @@ const DATA = {
         "size": 1.33
       },
       {
-        "word": "igen",
-        "count": 58,
-        "size": 1.31
-      },
-      {
         "word": "idag",
         "count": 58,
         "size": 1.31
       },
       {
-        "word": "siger",
-        "count": 58,
-        "size": 1.31
-      },
-      {
         "word": "gerne",
-        "count": 56,
-        "size": 1.29
-      },
-      {
-        "word": "skulle",
         "count": 56,
         "size": 1.29
       },
@@ -3167,6 +3112,61 @@ const DATA = {
         "word": "klar",
         "count": 55,
         "size": 1.28
+      },
+      {
+        "word": "kun",
+        "count": 55,
+        "size": 1.28
+      },
+      {
+        "word": "håber",
+        "count": 54,
+        "size": 1.28
+      },
+      {
+        "word": "kører",
+        "count": 53,
+        "size": 1.27
+      },
+      {
+        "word": "nogen",
+        "count": 51,
+        "size": 1.25
+      },
+      {
+        "word": "jep",
+        "count": 51,
+        "size": 1.25
+      },
+      {
+        "word": "ingen",
+        "count": 51,
+        "size": 1.25
+      },
+      {
+        "word": "mange",
+        "count": 49,
+        "size": 1.23
+      },
+      {
+        "word": "dage",
+        "count": 47,
+        "size": 1.21
+      },
+      {
+        "word": "hele",
+        "count": 46,
+        "size": 1.21
+      },
+      {
+        "word": "hjem",
+        "count": 46,
+        "size": 1.21
+      },
+      {
+        "word": "hans",
+        "count": 46,
+        "size": 1.21
       }
     ]
   },
@@ -4767,500 +4767,439 @@ const DATA = {
   "topicTrends": {
     "2019": [
       {
-        "word": "bliver",
-        "count": 102
+        "word": "their",
+        "count": 20,
+        "score": 19.14
       },
       {
-        "word": "sådan",
-        "count": 82
+        "word": "elvis",
+        "count": 27,
+        "score": 17.08
       },
       {
-        "word": "havde",
-        "count": 71
+        "word": "helgenæs",
+        "count": 32,
+        "score": 2.99
       },
       {
-        "word": "skulle",
-        "count": 60
+        "word": "film",
+        "count": 23,
+        "score": 2.18
       },
       {
-        "word": "måske",
-        "count": 58
+        "word": "hurtigt",
+        "count": 20,
+        "score": 1.96
       },
       {
-        "word": "nogle",
-        "count": 54
+        "word": "klokken",
+        "count": 21,
+        "score": 1.88
       },
       {
-        "word": "helt",
-        "count": 54
+        "word": "børn",
+        "count": 27,
+        "score": 1.75
       },
       {
-        "word": "tænker",
-        "count": 54
+        "word": "mine",
+        "count": 24,
+        "score": 1.64
       },
       {
-        "word": "ville",
-        "count": 53
+        "word": "vildt",
+        "count": 23,
+        "score": 1.62
       },
       {
-        "word": "fedt",
-        "count": 49
+        "word": "næste",
+        "count": 36,
+        "score": 1.6
       },
       {
-        "word": "kunne",
-        "count": 48
+        "word": "hellere",
+        "count": 20,
+        "score": 1.5
       },
       {
-        "word": "hjem",
-        "count": 47
-      },
-      {
-        "word": "hele",
-        "count": 46
-      },
-      {
-        "word": "gang",
-        "count": 45
-      },
-      {
-        "word": "hehe",
-        "count": 42
+        "word": "olsen",
+        "count": 24,
+        "score": 1.44
       }
     ],
     "2020": [
       {
-        "word": "bliver",
-        "count": 870
+        "word": "zoom",
+        "count": 34,
+        "score": 4.63
       },
       {
-        "word": "sådan",
-        "count": 540
+        "word": "brioche",
+        "count": 22,
+        "score": 3.9
       },
       {
-        "word": "måske",
-        "count": 480
+        "word": "plante",
+        "count": 21,
+        "score": 3.6
       },
       {
-        "word": "havde",
-        "count": 475
+        "word": "fliser",
+        "count": 28,
+        "score": 3.31
       },
       {
-        "word": "kunne",
-        "count": 426
+        "word": "flæsk",
+        "count": 37,
+        "score": 3.28
       },
       {
-        "word": "helt",
-        "count": 424
+        "word": "shiiiit",
+        "count": 21,
+        "score": 3.19
       },
       {
-        "word": "skulle",
-        "count": 417
+        "word": "bage",
+        "count": 24,
+        "score": 3.04
       },
       {
-        "word": "nogle",
-        "count": 388
+        "word": "iseng",
+        "count": 26,
+        "score": 2.94
       },
       {
-        "word": "tænker",
-        "count": 378
+        "word": "figge",
+        "count": 26,
+        "score": 2.56
       },
       {
-        "word": "ville",
-        "count": 370
+        "word": "garage",
+        "count": 23,
+        "score": 2.49
       },
       {
-        "word": "hele",
-        "count": 321
+        "word": "skov",
+        "count": 24,
+        "score": 2.41
       },
       {
-        "word": "fedt",
-        "count": 320
-      },
-      {
-        "word": "igen",
-        "count": 299
-      },
-      {
-        "word": "ingen",
-        "count": 291
-      },
-      {
-        "word": "nogen",
-        "count": 291
+        "word": "stegt",
+        "count": 47,
+        "score": 2.4
       }
     ],
     "2021": [
       {
-        "word": "bliver",
-        "count": 830
+        "word": "mokajen",
+        "count": 25,
+        "score": 4.54
       },
       {
-        "word": "sådan",
-        "count": 580
+        "word": "mundbind",
+        "count": 38,
+        "score": 3.65
       },
       {
-        "word": "havde",
-        "count": 503
+        "word": "sjus",
+        "count": 29,
+        "score": 3.01
       },
       {
-        "word": "skulle",
-        "count": 448
+        "word": "lejligheden",
+        "count": 25,
+        "score": 2.82
       },
       {
-        "word": "helt",
-        "count": 435
+        "word": "symptomer",
+        "count": 20,
+        "score": 2.75
       },
       {
-        "word": "nogle",
-        "count": 430
+        "word": "smittet",
+        "count": 23,
+        "score": 2.66
       },
       {
-        "word": "kunne",
-        "count": 427
+        "word": "test",
+        "count": 71,
+        "score": 2.47
       },
       {
-        "word": "måske",
-        "count": 407
+        "word": "lidl",
+        "count": 54,
+        "score": 2.39
       },
       {
-        "word": "tænker",
-        "count": 403
+        "word": "besoffen",
+        "count": 21,
+        "score": 2.32
       },
       {
-        "word": "fedt",
-        "count": 378
+        "word": "chivas",
+        "count": 20,
+        "score": 2.31
       },
       {
-        "word": "igen",
-        "count": 319
+        "word": "randers",
+        "count": 62,
+        "score": 2.3
       },
       {
-        "word": "shit",
-        "count": 314
-      },
-      {
-        "word": "tager",
-        "count": 301
-      },
-      {
-        "word": "blev",
-        "count": 298
-      },
-      {
-        "word": "været",
-        "count": 295
+        "word": "date",
+        "count": 23,
+        "score": 2.29
       }
     ],
     "2022": [
       {
-        "word": "bliver",
-        "count": 634
+        "word": "øldåsen",
+        "count": 23,
+        "score": 6.14
       },
       {
-        "word": "måske",
-        "count": 401
+        "word": "ruination",
+        "count": 28,
+        "score": 4.85
       },
       {
-        "word": "havde",
-        "count": 391
+        "word": "hamborg",
+        "count": 77,
+        "score": 4.08
       },
       {
-        "word": "tænker",
-        "count": 373
+        "word": "hazy",
+        "count": 36,
+        "score": 3.98
       },
       {
-        "word": "sådan",
-        "count": 363
+        "word": "løkke",
+        "count": 28,
+        "score": 3.82
       },
       {
-        "word": "nogle",
-        "count": 362
+        "word": "mette",
+        "count": 28,
+        "score": 3.45
       },
       {
-        "word": "fedt",
-        "count": 325
+        "word": "fredericia",
+        "count": 27,
+        "score": 3.39
       },
       {
-        "word": "skulle",
-        "count": 314
+        "word": "doink",
+        "count": 21,
+        "score": 3.37
       },
       {
-        "word": "helt",
-        "count": 313
+        "word": "kroner",
+        "count": 31,
+        "score": 3.15
       },
       {
-        "word": "ville",
-        "count": 281
+        "word": "barley",
+        "count": 21,
+        "score": 3.13
       },
       {
-        "word": "kunne",
-        "count": 281
+        "word": "svendsen",
+        "count": 25,
+        "score": 2.58
       },
       {
-        "word": "shit",
-        "count": 273
-      },
-      {
-        "word": "blev",
-        "count": 243
-      },
-      {
-        "word": "gang",
-        "count": 241
-      },
-      {
-        "word": "hjem",
-        "count": 239
+        "word": "beer",
+        "count": 28,
+        "score": 2.56
       }
     ],
     "2023": [
       {
-        "word": "bliver",
-        "count": 638
+        "word": "nizzleroy",
+        "count": 88,
+        "score": 5.92
       },
       {
-        "word": "havde",
-        "count": 441
+        "word": "rizz",
+        "count": 23,
+        "score": 5.69
       },
       {
-        "word": "måske",
-        "count": 407
+        "word": "chuck",
+        "count": 22,
+        "score": 4.54
       },
       {
-        "word": "sådan",
-        "count": 349
+        "word": "platte",
+        "count": 33,
+        "score": 4.35
       },
       {
-        "word": "helt",
-        "count": 333
+        "word": "sippin",
+        "count": 28,
+        "score": 3.85
       },
       {
-        "word": "tænker",
-        "count": 322
+        "word": "rummet",
+        "count": 20,
+        "score": 3.17
       },
       {
-        "word": "skulle",
-        "count": 320
+        "word": "appen",
+        "count": 26,
+        "score": 2.93
       },
       {
-        "word": "fedt",
-        "count": 297
+        "word": "vangede",
+        "count": 20,
+        "score": 2.75
       },
       {
-        "word": "nogle",
-        "count": 292
+        "word": "vegas",
+        "count": 20,
+        "score": 2.63
       },
       {
-        "word": "hele",
-        "count": 291
+        "word": "stout",
+        "count": 49,
+        "score": 2.61
       },
       {
-        "word": "kunne",
-        "count": 288
+        "word": "guns",
+        "count": 20,
+        "score": 2.34
       },
       {
-        "word": "shit",
-        "count": 282
-      },
-      {
-        "word": "tager",
-        "count": 279
-      },
-      {
-        "word": "blev",
-        "count": 267
-      },
-      {
-        "word": "ingen",
-        "count": 266
+        "word": "dang",
+        "count": 38,
+        "score": 2.22
       }
     ],
     "2024": [
       {
-        "word": "bliver",
-        "count": 553
-      },
-      {
-        "word": "havde",
-        "count": 362
-      },
-      {
-        "word": "måske",
-        "count": 354
-      },
-      {
-        "word": "skulle",
-        "count": 344
-      },
-      {
         "word": "redigeret",
-        "count": 340
+        "count": 340,
+        "score": 3.3
       },
       {
-        "word": "helt",
-        "count": 326
+        "word": "trump",
+        "count": 26,
+        "score": 3.22
       },
       {
-        "word": "kunne",
-        "count": 323
+        "word": "service",
+        "count": 37,
+        "score": 2.88
       },
       {
-        "word": "sådan",
-        "count": 286
+        "word": "alefarm",
+        "count": 28,
+        "score": 2.84
       },
       {
-        "word": "tænker",
-        "count": 278
+        "word": "vammen",
+        "count": 69,
+        "score": 2.76
       },
       {
-        "word": "nogle",
-        "count": 267
+        "word": "projektet",
+        "count": 20,
+        "score": 2.68
       },
       {
-        "word": "shit",
-        "count": 264
+        "word": "dipa",
+        "count": 33,
+        "score": 2.66
       },
       {
-        "word": "hele",
-        "count": 254
+        "word": "billetter",
+        "count": 39,
+        "score": 2.44
       },
       {
-        "word": "gerne",
-        "count": 231
+        "word": "gruppenavnet",
+        "count": 64,
+        "score": 2.43
       },
       {
-        "word": "kører",
-        "count": 221
+        "word": "telt",
+        "count": 42,
+        "score": 2.36
       },
       {
-        "word": "fedt",
-        "count": 220
+        "word": "helge",
+        "count": 47,
+        "score": 2.28
+      },
+      {
+        "word": "maden",
+        "count": 36,
+        "score": 2.27
       }
     ],
     "2025": [
       {
-        "word": "bliver",
-        "count": 483
+        "word": "weak",
+        "count": 24,
+        "score": 8.44
+      },
+      {
+        "word": "train",
+        "count": 27,
+        "score": 4.65
       },
       {
         "word": "redigeret",
-        "count": 309
+        "count": 309,
+        "score": 3.78
       },
       {
-        "word": "havde",
-        "count": 305
+        "word": "madsen",
+        "count": 23,
+        "score": 3.59
       },
       {
-        "word": "måske",
-        "count": 290
+        "word": "bedring",
+        "count": 37,
+        "score": 3.51
       },
       {
-        "word": "skulle",
-        "count": 269
+        "word": "drama",
+        "count": 21,
+        "score": 3.34
       },
       {
-        "word": "sådan",
-        "count": 269
+        "word": "vesten",
+        "count": 20,
+        "score": 3.13
       },
       {
-        "word": "kunne",
-        "count": 261
+        "word": "koncert",
+        "count": 34,
+        "score": 2.96
       },
       {
-        "word": "nogle",
-        "count": 251
+        "word": "alefarm",
+        "count": 21,
+        "score": 2.69
       },
       {
-        "word": "helt",
-        "count": 250
+        "word": "kalender",
+        "count": 33,
+        "score": 2.68
       },
       {
-        "word": "fedt",
-        "count": 220
+        "word": "vammen",
+        "count": 52,
+        "score": 2.63
       },
       {
-        "word": "gerne",
-        "count": 209
-      },
-      {
-        "word": "tænker",
-        "count": 209
-      },
-      {
-        "word": "gang",
-        "count": 195
-      },
-      {
-        "word": "shit",
-        "count": 193
-      },
-      {
-        "word": "blev",
-        "count": 193
+        "word": "bajasere",
+        "count": 35,
+        "score": 2.61
       }
     ],
-    "2026": [
-      {
-        "word": "bliver",
-        "count": 14
-      },
-      {
-        "word": "lave",
-        "count": 12
-      },
-      {
-        "word": "lørdag",
-        "count": 12
-      },
-      {
-        "word": "tager",
-        "count": 10
-      },
-      {
-        "word": "igen",
-        "count": 10
-      },
-      {
-        "word": "morgen",
-        "count": 9
-      },
-      {
-        "word": "shit",
-        "count": 8
-      },
-      {
-        "word": "måske",
-        "count": 8
-      },
-      {
-        "word": "skulle",
-        "count": 8
-      },
-      {
-        "word": "kunne",
-        "count": 8
-      },
-      {
-        "word": "fredag",
-        "count": 8
-      },
-      {
-        "word": "frokost",
-        "count": 8
-      },
-      {
-        "word": "tænker",
-        "count": 7
-      },
-      {
-        "word": "redigeret",
-        "count": 7
-      },
-      {
-        "word": "ingen",
-        "count": 7
-      }
-    ]
+    "2026": []
   },
   "bromance": {
     "pair": [
@@ -5268,5 +5207,112 @@ const DATA = {
       "Nizzle 3000"
     ],
     "count": 13840
+  },
+  "conversationRoles": {
+    "starters": {
+      "Rob": {
+        "count": 767,
+        "percent": 25.2,
+        "color": "#e94560"
+      },
+      "Nizzle 3000": {
+        "count": 327,
+        "percent": 10.7,
+        "color": "#00d4ff"
+      },
+      "Low": {
+        "count": 313,
+        "percent": 10.3,
+        "color": "#00ff88"
+      },
+      "Wiz": {
+        "count": 254,
+        "percent": 8.3,
+        "color": "#ffd700"
+      },
+      "Fyn": {
+        "count": 373,
+        "percent": 12.2,
+        "color": "#ff6b6b"
+      },
+      "Comput": {
+        "count": 156,
+        "percent": 5.1,
+        "color": "#a855f7"
+      },
+      "Holst": {
+        "count": 472,
+        "percent": 15.5,
+        "color": "#06b6d4"
+      },
+      "Lys": {
+        "count": 79,
+        "percent": 2.6,
+        "color": "#f97316"
+      },
+      "Døring": {
+        "count": 192,
+        "percent": 6.3,
+        "color": "#84cc16"
+      },
+      "Zami": {
+        "count": 113,
+        "percent": 3.7,
+        "color": "#ec4899"
+      }
+    },
+    "closers": {
+      "Rob": {
+        "count": 923,
+        "percent": 30.3,
+        "color": "#e94560"
+      },
+      "Nizzle 3000": {
+        "count": 341,
+        "percent": 11.2,
+        "color": "#00d4ff"
+      },
+      "Low": {
+        "count": 316,
+        "percent": 10.4,
+        "color": "#00ff88"
+      },
+      "Wiz": {
+        "count": 400,
+        "percent": 13.1,
+        "color": "#ffd700"
+      },
+      "Fyn": {
+        "count": 242,
+        "percent": 7.9,
+        "color": "#ff6b6b"
+      },
+      "Comput": {
+        "count": 145,
+        "percent": 4.8,
+        "color": "#a855f7"
+      },
+      "Holst": {
+        "count": 219,
+        "percent": 7.2,
+        "color": "#06b6d4"
+      },
+      "Lys": {
+        "count": 160,
+        "percent": 5.3,
+        "color": "#f97316"
+      },
+      "Døring": {
+        "count": 116,
+        "percent": 3.8,
+        "color": "#84cc16"
+      },
+      "Zami": {
+        "count": 184,
+        "percent": 6.0,
+        "color": "#ec4899"
+      }
+    },
+    "totalConversations": 3046
   }
 };
