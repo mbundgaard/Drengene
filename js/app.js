@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTopicTrends();
     renderMood();
     renderPersonality();
+    renderConvRoles();
 });
 
 // Slide-in Menu
@@ -799,4 +800,71 @@ function calculatePersonalityProfiles() {
     profiles.sort((a, b) => DATA.members[b.name].messages - DATA.members[a.name].messages);
 
     return profiles;
+}
+
+// Conversation Roles Page
+function renderConvRoles() {
+    const summaryContainer = document.getElementById('convroles-summary');
+    const startersContainer = document.getElementById('convroles-starters');
+    const closersContainer = document.getElementById('convroles-closers');
+
+    if (!summaryContainer || !DATA.conversationRoles) {
+        if (summaryContainer) {
+            summaryContainer.innerHTML = '<p class="empty-state">Data ikke tilgængelig. Kør data-generatoren igen.</p>';
+        }
+        return;
+    }
+
+    const roles = DATA.conversationRoles;
+    const starters = Object.entries(roles.starters).sort((a, b) => b[1].count - a[1].count);
+    const closers = Object.entries(roles.closers).sort((a, b) => b[1].count - a[1].count);
+
+    const topStarter = starters[0];
+    const topCloser = closers[0];
+    const maxStarts = starters[0]?.[1].count || 1;
+    const maxCloses = closers[0]?.[1].count || 1;
+
+    // Summary highlights
+    summaryContainer.innerHTML = `
+        <div class="convroles-highlight starter">
+            <div class="convroles-highlight-icon">🎬</div>
+            <div class="convroles-highlight-label">Top Starter</div>
+            <div class="convroles-highlight-name" style="color: ${topStarter[1].color}">${topStarter[0]}</div>
+            <div class="convroles-highlight-stat">${formatNumber(topStarter[1].count)} samtaler startet</div>
+        </div>
+        <div class="convroles-highlight closer">
+            <div class="convroles-highlight-icon">🔚</div>
+            <div class="convroles-highlight-label">Top Afslutter</div>
+            <div class="convroles-highlight-name" style="color: ${topCloser[1].color}">${topCloser[0]}</div>
+            <div class="convroles-highlight-stat">${formatNumber(topCloser[1].count)} samtaler afsluttet</div>
+        </div>
+    `;
+
+    // Starters list
+    startersContainer.innerHTML = starters.map(([name, data]) => `
+        <div class="convroles-item">
+            <div class="convroles-item-header">
+                <span class="convroles-item-name" style="color: ${data.color}">${name}</span>
+                <span class="convroles-item-count" style="color: #22c55e">${formatNumber(data.count)}</span>
+            </div>
+            <div class="convroles-item-bar">
+                <div class="convroles-item-fill" style="width: ${(data.count / maxStarts) * 100}%; background: #22c55e"></div>
+            </div>
+            <div class="convroles-item-percent">${data.percent}% af alle samtaler</div>
+        </div>
+    `).join('');
+
+    // Closers list
+    closersContainer.innerHTML = closers.map(([name, data]) => `
+        <div class="convroles-item">
+            <div class="convroles-item-header">
+                <span class="convroles-item-name" style="color: ${data.color}">${name}</span>
+                <span class="convroles-item-count" style="color: #ef4444">${formatNumber(data.count)}</span>
+            </div>
+            <div class="convroles-item-bar">
+                <div class="convroles-item-fill" style="width: ${(data.count / maxCloses) * 100}%; background: #ef4444"></div>
+            </div>
+            <div class="convroles-item-percent">${data.percent}% af alle samtaler</div>
+        </div>
+    `).join('');
 }
