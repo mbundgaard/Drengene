@@ -572,28 +572,34 @@ function renderPersonality() {
     const profiles = calculatePersonalityProfiles();
 
     container.innerHTML = profiles.map(profile => `
-        <div class="personality-card" style="border-color: ${profile.color}30">
-            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: ${profile.color}"></div>
+        <div class="personality-card" style="border-color: ${profile.roleColor}40">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, ${profile.roleColor}, ${profile.color})"></div>
             <div class="personality-header">
-                <div class="personality-avatar" style="background: ${profile.color}20">
+                <div class="personality-avatar" style="background: ${profile.roleColor}25">
                     ${profile.emoji}
                 </div>
                 <div class="personality-info">
                     <div class="personality-name" style="color: ${profile.color}">${profile.name}</div>
-                    <div class="personality-type" style="color: ${profile.color}">${profile.type}</div>
+                    <div class="personality-type">
+                        <span style="color: ${profile.roleColor}">${profile.type}</span>
+                        <span class="personality-code">${profile.typeCode}</span>
+                    </div>
                 </div>
+                <div class="personality-role" style="background: ${profile.roleColor}20; color: ${profile.roleColor}">${profile.role}</div>
             </div>
             <div class="personality-tagline">"${profile.tagline}"</div>
             <div class="personality-traits">
                 ${profile.traits.map(trait => `
                     <div class="personality-trait">
                         <div class="personality-trait-header">
+                            <span class="personality-trait-ends">${trait.leftLabel}</span>
                             <span class="personality-trait-label">${trait.label}</span>
-                            <span class="personality-trait-value" style="color: ${profile.color}">${trait.valueLabel}</span>
+                            <span class="personality-trait-ends">${trait.rightLabel}</span>
                         </div>
                         <div class="personality-trait-bar">
-                            <div class="personality-trait-fill" style="width: ${trait.percent}%; background: ${profile.color}"></div>
+                            <div class="personality-trait-fill" style="width: ${trait.percent}%; background: ${profile.roleColor}"></div>
                         </div>
+                        <div class="personality-trait-value">${trait.valueLabel}</div>
                     </div>
                 `).join('')}
             </div>
@@ -612,7 +618,7 @@ function renderPersonality() {
 function calculatePersonalityProfiles() {
     const members = DATA.meta.members;
 
-    // Calculate all metrics for ranking
+    // Calculate metrics for all members
     const memberData = members.map(name => {
         const member = DATA.members[name];
         if (!member) return null;
@@ -641,112 +647,74 @@ function calculatePersonalityProfiles() {
         };
     }).filter(Boolean);
 
-    // Rank each person on different dimensions (1 = best/most)
-    const rankings = {};
-    const rankBy = (key, ascending = false) => {
-        const sorted = [...memberData].sort((a, b) => ascending ? a[key] - b[key] : b[key] - a[key]);
-        sorted.forEach((m, i) => {
-            if (!rankings[m.name]) rankings[m.name] = {};
-            rankings[m.name][key] = i + 1;
-        });
+    // Calculate group averages for comparison
+    const avg = {
+        messages: memberData.reduce((s, m) => s + m.messages, 0) / memberData.length,
+        wordsPerMsg: memberData.reduce((s, m) => s + m.wordsPerMsg, 0) / memberData.length,
+        emojiRatio: memberData.reduce((s, m) => s + m.emojiRatio, 0) / memberData.length,
+        replySpeed: memberData.reduce((s, m) => s + m.replySpeed, 0) / memberData.length,
+        moodScore: memberData.reduce((s, m) => s + m.moodScore, 0) / memberData.length,
+        mediaRatio: memberData.reduce((s, m) => s + m.mediaRatio, 0) / memberData.length,
+        nightRatio: memberData.reduce((s, m) => s + m.nightRatio, 0) / memberData.length
     };
 
-    rankBy('messages');           // Most active
-    rankBy('wordsPerMsg');        // Most verbose
-    rankBy('emojiRatio');         // Most expressive
-    rankBy('replySpeed', true);   // Fastest replier (lower is better)
-    rankBy('moodScore');          // Most positive
-    rankBy('nightRatio');         // Most night owl
-    rankBy('morningRatio');       // Most early bird
-    rankBy('mediaRatio');         // Most media sharing
-    rankBy('ghostDays');          // Biggest ghost
-    rankBy('laughRatio');         // Laughs most
+    // 4 personality dimensions based on chat behavior (inspired by 16personalities)
+    // S/L = Snakker/Lytter (Social energy - message volume)
+    // E/R = Ekspressiv/Reserveret (Expression style - emoji/media usage)
+    // P/N = Positiv/Neutral (Mood tendency - sentiment)
+    // K/I = Konsistent/Impulsiv (Rhythm - reply pattern/timing)
 
-    // Archetype definitions - each person gets their BEST FIT based on where they rank #1 or #2
-    const archetypes = {
-        'messages': { type: 'Snakkesansen', emoji: '💬', tagline: 'Har altid noget at sige' },
-        'wordsPerMsg': { type: 'Filosoffen', emoji: '🤔', tagline: 'Tænker før der tales, kvalitet over kvantitet' },
-        'emojiRatio': { type: 'Ekspressiven', emoji: '🎭', tagline: 'Følelser udtrykkes bedst med emojis' },
-        'replySpeed': { type: 'Energibomben', emoji: '⚡', tagline: 'Hurtig på aftrækkeren, altid engageret' },
-        'moodScore': { type: 'Solstrålen', emoji: '☀️', tagline: 'Bringer lys og positivitet overalt' },
-        'nightRatio': { type: 'Natteravnen', emoji: '🦉', tagline: 'De bedste samtaler sker efter midnat' },
-        'morningRatio': { type: 'Morgenfuglen', emoji: '🌅', tagline: 'Oppe med solen, klar til dagen' },
-        'mediaRatio': { type: 'Mediekongen', emoji: '📸', tagline: 'Et billede siger mere end tusind ord' },
-        'ghostDays': { type: 'Spøgelset', emoji: '👻', tagline: 'Dukker op når du mindst venter det' },
-        'laughRatio': { type: 'Grineren', emoji: '😂', tagline: 'Finder altid noget at grine af' }
+    // Personality type definitions - 16 combinations grouped into 4 roles
+    const personalityTypes = {
+        // MOTORER - High energy, driving conversation
+        'SEPK': { role: 'Motor', name: 'Dirigenten', emoji: '🎯', desc: 'Styrer samtalen med energi og engagement' },
+        'SEPI': { role: 'Motor', name: 'Ildsjælen', emoji: '🔥', desc: 'Tænder op for enhver samtale' },
+        'SENK': { role: 'Motor', name: 'Ankeret', emoji: '⚓', desc: 'Holder gruppen samlet og på sporet' },
+        'SENI': { role: 'Motor', name: 'Katalysatoren', emoji: '⚡', desc: 'Sætter gang i tingene når det gælder' },
+
+        // ENTERTAINERE - Expressive and social
+        'SRPK': { role: 'Entertainer', name: 'Fortælleren', emoji: '📖', desc: 'Deler historier og holder opmærksomheden' },
+        'SRPI': { role: 'Entertainer', name: 'Provokatøren', emoji: '😈', desc: 'Krydrer samtalen med kant og humor' },
+        'SRNK': { role: 'Entertainer', name: 'Realisten', emoji: '🎭', desc: 'Siger tingene som de er, uden filter' },
+        'SRNI': { role: 'Entertainer', name: 'Jokeren', emoji: '🃏', desc: 'Overrasker altid med uventede indspark' },
+
+        // TÆNKERE - More reserved, thoughtful
+        'LEPK': { role: 'Tænker', name: 'Optimisten', emoji: '☀️', desc: 'Bringer altid lys og positivitet' },
+        'LEPI': { role: 'Tænker', name: 'Drømmeren', emoji: '🌙', desc: 'Tænker stort og ser muligheder' },
+        'LENK': { role: 'Tænker', name: 'Filosoffen', emoji: '🤔', desc: 'Reflekterer dybt over tingene' },
+        'LENI': { role: 'Tænker', name: 'Iagttageren', emoji: '👁️', desc: 'Ser alt, siger lidt, men rammer plet' },
+
+        // STØTTER - Steady, reliable presence
+        'LRPK': { role: 'Støtte', name: 'Diplomaten', emoji: '🤝', desc: 'Skaber balance og harmoni' },
+        'LRPI': { role: 'Støtte', name: 'Mystikeren', emoji: '🔮', desc: 'Dukker op med visdom i rette øjeblik' },
+        'LRNK': { role: 'Støtte', name: 'Analytikeren', emoji: '📊', desc: 'Holder hovedet koldt og fakta klare' },
+        'LRNI': { role: 'Støtte', name: 'Eneren', emoji: '🎯', desc: 'Kvalitet over kvantitet, hver gang' }
     };
 
-    // Secondary archetypes for variety
-    const secondaryArchetypes = [
-        { type: 'Hygge-Mesteren', emoji: '🛋️', tagline: 'Holder gruppen sammen med god stemning' },
-        { type: 'Diplomaten', emoji: '⚖️', tagline: 'Altid balanceret, aldrig for meget drama' },
-        { type: 'Realisten', emoji: '🌧️', tagline: 'Holder begge ben på jorden' },
-        { type: 'Entusiasten', emoji: '🎉', tagline: 'Altid klar på det næste eventyr' }
-    ];
+    const roleColors = {
+        'Motor': '#e94560',
+        'Entertainer': '#ffd700',
+        'Tænker': '#64ffda',
+        'Støtte': '#a855f7'
+    };
 
-    // Assign archetypes - each person gets the trait where they rank highest
-    const usedArchetypes = new Set();
     const profiles = [];
 
-    // Sort members by message count to process most active first
-    const sortedMembers = [...memberData].sort((a, b) => b.messages - a.messages);
-
-    for (const data of sortedMembers) {
+    for (const data of memberData) {
         const name = data.name;
         const member = data.member;
-        const ranks = rankings[name];
 
-        // Find this person's best ranking that hasn't been taken
-        let bestArchetype = null;
-        let bestRank = 999;
-        let bestKey = null;
+        // Determine each dimension
+        const S_or_L = data.messages > avg.messages ? 'S' : 'L';
+        const E_or_R = (data.emojiRatio + data.mediaRatio * 5) > (avg.emojiRatio + avg.mediaRatio * 5) ? 'E' : 'R';
+        const P_or_N = data.moodScore > avg.moodScore ? 'P' : 'N';
+        const K_or_I = data.replySpeed < avg.replySpeed && data.ghostDays < 10 ? 'K' : 'I';
 
-        for (const [key, arch] of Object.entries(archetypes)) {
-            if (!usedArchetypes.has(arch.type) && ranks[key] < bestRank) {
-                bestRank = ranks[key];
-                bestArchetype = arch;
-                bestKey = key;
-            }
-        }
+        const typeCode = S_or_L + E_or_R + P_or_N + K_or_I;
+        const personality = personalityTypes[typeCode] || personalityTypes['LRNK'];
 
-        // If all primary archetypes taken, use secondary
-        if (!bestArchetype) {
-            for (const arch of secondaryArchetypes) {
-                if (!usedArchetypes.has(arch.type)) {
-                    bestArchetype = arch;
-                    break;
-                }
-            }
-        }
-
-        // Fallback
-        if (!bestArchetype) {
-            bestArchetype = { type: 'Gruppens Hjerte', emoji: '❤️', tagline: 'En uundværlig del af fællesskabet' };
-        }
-
-        usedArchetypes.add(bestArchetype.type);
-
-        // Generate personalized tagline based on actual stats
-        let tagline = bestArchetype.tagline;
-        if (bestKey === 'messages' && member.messages > 30000) {
-            tagline = `${formatNumber(member.messages)} beskeder - gruppens motor`;
-        } else if (bestKey === 'moodScore' && data.moodScore > 15) {
-            tagline = `+${data.moodScore}% positivitet - gruppens lyspunkt`;
-        } else if (bestKey === 'nightRatio' && member.lateNight > 200) {
-            tagline = `${member.lateNight} beskeder sendt efter midnat`;
-        } else if (bestKey === 'mediaRatio' && member.media > 2000) {
-            tagline = `${formatNumber(member.media)} billeder og videoer delt`;
-        } else if (bestKey === 'replySpeed' && data.replyData) {
-            tagline = `Svarer på ${data.replyData.avgDisplay} i gennemsnit`;
-        } else if (bestKey === 'wordsPerMsg') {
-            tagline = `${data.wordsPerMsg.toFixed(1)} ord per besked i gennemsnit`;
-        } else if (bestKey === 'ghostDays' && data.ghostDays > 7) {
-            tagline = `Forsvandt i ${data.ghostDays} dage én gang`;
-        }
-
-        // Calculate normalized scores for display bars
+        // Calculate normalized scores for display (0-100)
         const maxMessages = Math.max(...memberData.map(m => m.messages));
-        const maxWordsPerMsg = Math.max(...memberData.map(m => m.wordsPerMsg));
         const maxEmojiRatio = Math.max(...memberData.map(m => m.emojiRatio));
         const minReplySpeed = Math.min(...memberData.map(m => m.replySpeed));
         const maxReplySpeed = Math.max(...memberData.map(m => m.replySpeed));
@@ -756,38 +724,79 @@ function calculatePersonalityProfiles() {
         const speedScore = 100 - ((data.replySpeed - minReplySpeed) / (maxReplySpeed - minReplySpeed)) * 100;
         const moodScoreNorm = ((data.moodScore + 25) / 50) * 100;
 
+        // Generate personalized tagline
+        let tagline = personality.desc;
+        if (S_or_L === 'S' && member.messages > 30000) {
+            tagline = `${formatNumber(member.messages)} beskeder - ${personality.desc.toLowerCase()}`;
+        } else if (P_or_N === 'P' && data.moodScore > 15) {
+            tagline = `+${data.moodScore}% positivitet - ${personality.desc.toLowerCase()}`;
+        }
+
+        // Traits with the 4 dimensions
         const traits = [
-            { label: 'Social Energi', percent: Math.min(100, socialScore), valueLabel: socialScore > 70 ? 'Ekstrovert' : socialScore > 40 ? 'Balanceret' : 'Introvert' },
-            { label: 'Udtryksform', percent: Math.min(100, expressiveScore), valueLabel: expressiveScore > 60 ? 'Ekspressiv' : expressiveScore > 30 ? 'Moderat' : 'Reserveret' },
-            { label: 'Svarhastighed', percent: Math.min(100, speedScore), valueLabel: data.replyData?.avgDisplay || 'Ukendt' },
-            { label: 'Humør', percent: Math.min(100, Math.max(0, moodScoreNorm)), valueLabel: moodScoreNorm > 65 ? 'Positiv' : moodScoreNorm > 45 ? 'Neutral' : 'Seriøs' }
+            {
+                label: S_or_L === 'S' ? 'Snakker' : 'Lytter',
+                percent: socialScore,
+                valueLabel: `${formatNumber(member.messages)} beskeder`,
+                leftLabel: 'L',
+                rightLabel: 'S'
+            },
+            {
+                label: E_or_R === 'E' ? 'Ekspressiv' : 'Reserveret',
+                percent: expressiveScore,
+                valueLabel: `${member.emojis} emojis`,
+                leftLabel: 'R',
+                rightLabel: 'E'
+            },
+            {
+                label: P_or_N === 'P' ? 'Positiv' : 'Neutral',
+                percent: Math.max(0, Math.min(100, moodScoreNorm)),
+                valueLabel: `${data.moodScore > 0 ? '+' : ''}${data.moodScore}%`,
+                leftLabel: 'N',
+                rightLabel: 'P'
+            },
+            {
+                label: K_or_I === 'K' ? 'Konsistent' : 'Impulsiv',
+                percent: speedScore,
+                valueLabel: data.replyData?.avgDisplay || 'Ukendt',
+                leftLabel: 'I',
+                rightLabel: 'K'
+            }
         ];
 
-        // Build badges based on top rankings
+        // Build badges based on standout characteristics
         const badges = [];
-        if (ranks.messages <= 2) badges.push({ icon: '💬', label: 'Snakker mest' });
-        if (ranks.wordsPerMsg <= 2) badges.push({ icon: '📝', label: 'Ordrig' });
-        if (ranks.emojiRatio <= 2) badges.push({ icon: '😀', label: 'Emoji-fan' });
-        if (ranks.replySpeed <= 2) badges.push({ icon: '⚡', label: 'Lynsvarer' });
-        if (ranks.moodScore <= 2) badges.push({ icon: '☀️', label: 'Solskin' });
-        if (ranks.nightRatio <= 2) badges.push({ icon: '🌙', label: 'Nataktiv' });
-        if (ranks.morningRatio <= 2) badges.push({ icon: '🌅', label: 'Tidlig fugl' });
-        if (ranks.mediaRatio <= 2) badges.push({ icon: '📷', label: 'Billedkunstner' });
-        if (ranks.laughRatio <= 2) badges.push({ icon: '😂', label: 'Griner mest' });
+        if (socialScore > 80) badges.push({ icon: '💬', label: 'Snakkesansen' });
+        if (socialScore < 30) badges.push({ icon: '🤫', label: 'Stille type' });
+        if (expressiveScore > 80) badges.push({ icon: '😀', label: 'Emoji-fan' });
+        if (speedScore > 80) badges.push({ icon: '⚡', label: 'Lynsvarer' });
+        if (speedScore < 30) badges.push({ icon: '🐢', label: 'Tager sig tid' });
+        if (data.moodScore > 15) badges.push({ icon: '☀️', label: 'Solskin' });
+        if (data.moodScore < -3) badges.push({ icon: '🌧️', label: 'Realist' });
+        if (data.nightRatio > 0.02) badges.push({ icon: '🌙', label: 'Nataktiv' });
+        if (data.morningRatio > 0.02) badges.push({ icon: '🌅', label: 'Tidlig fugl' });
+        if (data.ghostDays > 14) badges.push({ icon: '👻', label: 'Spøgelse' });
+        if (member.media > 2000) badges.push({ icon: '📷', label: 'Billedkunstner' });
+        if (member.laughs / member.messages > 0.1) badges.push({ icon: '😂', label: 'Griner mest' });
         if (member.swears > 800) badges.push({ icon: '🤬', label: 'Bandeansen' });
         if (member.questions > 2000) badges.push({ icon: '❓', label: 'Spørgelansen' });
-        if (data.moodScore < -3) badges.push({ icon: '🌧️', label: 'Realist' });
 
         profiles.push({
             name,
             color: member.color,
-            type: bestArchetype.type,
-            emoji: bestArchetype.emoji,
+            roleColor: roleColors[personality.role],
+            role: personality.role,
+            type: personality.name,
+            typeCode,
+            emoji: personality.emoji,
             tagline,
             traits,
             badges: badges.slice(0, 4)
         });
     }
+
+    // Sort by message count (most active first)
+    profiles.sort((a, b) => DATA.members[b.name].messages - DATA.members[a.name].messages);
 
     return profiles;
 }
