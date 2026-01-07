@@ -1,6 +1,5 @@
 // App initialization
 document.addEventListener('DOMContentLoaded', () => {
-    initMenu();
     initNavigation();
     renderHome();
     renderAwards();
@@ -13,59 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
     renderStakkelsFar();
 });
 
-// Slide-in Menu
-function initMenu() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const overlay = document.getElementById('menu-overlay');
-
-    function openMenu() {
-        menu.classList.add('active');
-        overlay.classList.add('active');
-        menuToggle.classList.add('active');
-    }
-
-    function closeMenu() {
-        menu.classList.remove('active');
-        overlay.classList.remove('active');
-        menuToggle.classList.remove('active');
-    }
-
-    menuToggle.addEventListener('click', () => {
-        if (menu.classList.contains('active')) {
-            closeMenu();
-        } else {
-            openMenu();
-        }
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    // Close menu when clicking a menu item
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.addEventListener('click', closeMenu);
-    });
-}
+// Simple navigation (no menu toggle needed)
 
 // Navigation
 function initNavigation() {
-    const menuItems = document.querySelectorAll('.menu-item');
+    const navBtns = document.querySelectorAll('.nav-btn');
 
-    menuItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const page = item.dataset.page;
+    navBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const page = btn.dataset.page;
 
-            // Update menu items
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+            // Update nav buttons
+            navBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
             // Update pages
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(`page-${page}`).classList.add('active');
-
-            // Update header title
-            const pageTitle = item.textContent.trim();
-            document.getElementById('header-title').textContent = pageTitle;
 
             // Scroll to top
             document.getElementById(`page-${page}`).scrollTop = 0;
@@ -99,8 +62,7 @@ function renderHome() {
     document.getElementById('bromance-stat').textContent = `${formatNumber(DATA.bromance.count)} samtaler sammen`;
 
     const container = document.getElementById('group-names');
-    const shuffled = [...DATA.groupNames].sort(() => Math.random() - 0.5).slice(0, 15);
-    container.innerHTML = shuffled.map(g =>
+    container.innerHTML = DATA.groupNames.map(g =>
         `<span class="group-name-tag">${escapeHtml(g.name)}</span>`
     ).join('');
 }
